@@ -99,20 +99,38 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="system-visual" aria-label="Darstellung eines strukturierten SAP-Lösungsprozesses">
-              <div className="visual-orbit orbit-one"></div>
-              <div className="visual-orbit orbit-two"></div>
-              <div className="visual-label visual-label-top">Klarer Systemkontext</div>
-              <div className="visual-core">
-                <span className="core-kicker">SAP</span>
-                <strong>Analyse<br/>→ Lösung</strong>
-                <span className="core-status"><i></i> Strukturiert umsetzen</span>
+            <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
+              <div className="hero-portrait">
+                <Image
+                  src="/andreas-klaus.png"
+                  alt="Andreas Klaus, SAP-Berater aus Nürnberg"
+                  fill
+                  priority
+                  sizes="(max-width: 950px) 100vw, 440px"
+                />
+                <div className="hero-portrait-caption">
+                  <span>Ihr Ansprechpartner</span>
+                  <strong>Andreas Klaus</strong>
+                </div>
               </div>
-              <div className="visual-node node-one"><span>01</span> Prozesse</div>
-              <div className="visual-node node-two"><span>02</span> Systeme</div>
-              <div className="visual-node node-three"><span>03</span> Menschen</div>
-              <div className="visual-caption"><span>AK</span> Technische Klarheit.<br/>Verlässliche Umsetzung.</div>
-            </div>
+              <div className="hero-contact" aria-label="Kontaktdaten">
+                <a href="mailto:info@sapberatungandreasklaus.de">
+                  <span>E-Mail</span>
+                  <strong>info@sapberatungandreasklaus.de</strong>
+                  <i aria-hidden="true">↗</i>
+                </a>
+                <a href="tel:+4915235804909">
+                  <span>Telefon</span>
+                  <strong>+49 152 35804909</strong>
+                  <i aria-hidden="true">↗</i>
+                </a>
+                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer">
+                  <span>LinkedIn</span>
+                  <strong>Profil ansehen</strong>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              </div>
+            </aside>
           </div>
         </section>
 
