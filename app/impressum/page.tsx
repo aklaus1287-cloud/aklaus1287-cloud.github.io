@@ -22,7 +22,7 @@ export default function Impressum() {
 
       <h2>Kontakt</h2>
       <p>
-        Telefon: <a href="tel:+4915235804909">+49 152 35804909</a><br />
+        Telefon: <a href="tel:+4915236936743">+49152 36936743</a><br />
         E-Mail: <a href="mailto:info@sapberatungandreasklaus.de">info@sapberatungandreasklaus.de</a>
       </p>
 
