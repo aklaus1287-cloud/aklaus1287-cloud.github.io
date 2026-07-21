@@ -6,9 +6,12 @@ Neue, responsive Unternehmenswebsite für [sapberatungandreasklaus.de](https://w
 
 - klare Positionierung und Leistungsdarstellung
 - responsive Startseite für Desktop und Mobilgeräte
-- Kontaktmöglichkeiten per E-Mail und Telefon
+- datensparsames Anfrageformular sowie Kontakt per E-Mail, Telefon und LinkedIn
+- fünf eigenständige Leistungsseiten für relevante SAP-Suchanfragen
+- fokussierte Referenzauswahl plus vollständige Projektliste aus dem Lebenslauf
 - Impressum und Datenschutzhinweise
-- technische SEO- und Social-Preview-Metadaten
+- Sitemap, robots.txt, strukturierte Daten, Alt-URL-Weiterleitungen und Social Preview
+- responsive Portraitbilder in AVIF und WebP
 - automatisches Deployment über GitHub Pages
 
 ## Lokale Entwicklung
@@ -36,4 +39,4 @@ Jeder Push auf `main` erstellt die statische Website und veröffentlicht sie aut
 
 ## Rechtlicher Hinweis
 
-Impressum und Datenschutzhinweise basieren auf den vorhandenen Unternehmensangaben und dem aktuellen technischen Aufbau ohne eigenes Tracking. Vor dem endgültigen Wechsel der Unternehmensdomain sollten die Rechtstexte fachlich geprüft werden.
+Impressum und Datenschutzhinweise basieren auf den vorhandenen Unternehmensangaben und dem aktuellen technischen Aufbau ohne eigenes Tracking. Rechtstexte sollten bei Änderungen an Unternehmen, Website oder eingesetzten Diensten fachlich geprüft werden.

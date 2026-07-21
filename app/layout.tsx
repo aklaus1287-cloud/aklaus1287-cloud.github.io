@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ConversionEvents from "./components/ConversionEvents";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
     title: "SAP Beratung Andreas Klaus",
     description: "Technische SAP-Beratung für Entwicklung, Integration und Transformation.",
     images: ["/og.png"],
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "64x64" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
@@ -63,6 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="de-DE">
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }} />
+        <ConversionEvents />
         {children}
       </body>
     </html>

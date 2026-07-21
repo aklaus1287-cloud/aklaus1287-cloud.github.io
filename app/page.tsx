@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "./components/ContactForm";
 
 const services = [
   {
@@ -7,36 +7,42 @@ const services = [
     title: "ABAP & Fiori Entwicklung",
     text: "Individuelle SAP-Lösungen von der technischen Konzeption bis zur produktionsreifen Umsetzung – nachvollziehbar, wartbar und nah am Geschäftsprozess.",
     tags: ["ABAP", "ABAP OO", "Fiori", "Adobe Forms"],
+    href: "/leistungen/abap-entwicklung/",
   },
   {
     number: "02",
     title: "Integration & Schnittstellen",
     text: "Robuste Verbindungen zwischen SAP und Drittsystemen – inklusive Architektur, Berechtigungen, Netzwerkkommunikation, Tests und Fehleranalyse.",
     tags: ["REST", "SOAP", "RFC", "IDoc"],
+    href: "/leistungen/sap-schnittstellen/",
   },
   {
     number: "03",
     title: "S/4HANA Transformation",
     text: "Technische Begleitung von Voruntersuchung, Readiness Check und Code Conversion bis zur Einführung und Stabilisierung der neuen Systemlandschaft.",
     tags: ["S/4HANA", "ATC", "Code Conversion", "SAP Activate"],
+    href: "/leistungen/s4hana-beratung/",
   },
   {
     number: "04",
     title: "Berechtigungen & Compliance",
     text: "Berechtigungskonzepte, Benutzeradministration und technische Umsetzung für sichere, prüfbare und im Alltag praktikable SAP-Prozesse.",
     tags: ["Berechtigungen", "XAMS", "CUA", "Compliance"],
+    href: "/leistungen/sap-berechtigungen/",
   },
   {
     number: "05",
     title: "Lizenzen & Optimierung",
     text: "Transparente Analyse von SAP-Lizenzzuordnungen, Vertrags- und Nutzungsszenarien sowie fundierte Entscheidungsgrundlagen für die Optimierung.",
     tags: ["SNOW", "Digital Access", "Vermessung", "Optimierung"],
+    href: "/leistungen/technische-sap-beratung/",
   },
   {
     number: "06",
     title: "Projektleitung & Stabilisierung",
     text: "Erfahrene technische Projektsteuerung, strukturierte Testkonzeption und fokussierte Unterstützung in kritischen Projekt- und Betriebsphasen.",
     tags: ["Projektleitung", "Testing", "Fehleranalyse", "Training"],
+    href: "/leistungen/technische-sap-beratung/",
   },
 ];
 
@@ -63,13 +69,24 @@ const expertise = [
   },
 ];
 
-const projects = [
+type Project = {
+  period: string;
+  title: string;
+  company: string;
+  role: string;
+  text: string;
+  result?: string;
+  tech: string[];
+};
+
+const projects: Project[] = [
   {
     period: "seit 06/2025",
     title: "Schnittstelle für Wertpapierdaten",
     company: "Thüringer Aufbaubank · Bank- und Finanzwesen",
     role: "Softwareentwicklung",
     text: "Konzeption der Schnittstellenarchitektur, ABAP/OO-Entwicklung, Berechtigungs- und Netzwerkdesign, RFC-Anbindung sowie Test und Fehleranalyse.",
+    result: "Konkreter Beitrag: abgestimmte Schnittstellenarchitektur, technische Anbindung und durchgängiges Testdesign.",
     tech: ["SAP ECC", "REST", "RFC", "WM Datenservice"],
   },
   {
@@ -78,6 +95,7 @@ const projects = [
     company: "DATEV eG · Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Systemarchitektur, ABAP/OO, Fiori Apps, Berechtigungen, RFC/SOAP/REST-Schnittstellen und Adobe Forms im Ariba-Umfeld.",
+    result: "Konkreter Beitrag: technischer Proof of Concept als belastbare Grundlage für die weitere Architekturentscheidung.",
     tech: ["SAP Ariba", "S/4HANA", "Fiori", "Integration Suite"],
   },
   {
@@ -86,6 +104,7 @@ const projects = [
     company: "DATEV eG · Informationstechnologie",
     role: "Softwareentwicklung",
     text: "ABAP/OO-Entwicklung, Code Conversion, Berechtigungen, Fiori Apps, Train-the-Trainer, Testkonzeption und Stabilisierung.",
+    result: "Konkreter Beitrag: konvertierte Eigenentwicklungen, abgesicherte Fiori- und Berechtigungsthemen sowie Wissenstransfer.",
     tech: ["SAP ERP ECC", "S/4HANA", "Fiori"],
   },
   {
@@ -94,6 +113,7 @@ const projects = [
     company: "Berliner Verkehrsbetriebe · ÖPNV",
     role: "Berechtigungsentwicklung",
     text: "Konzeption und Entwicklung von Berechtigungen, Benutzeradministration, Trainings, ABAP/OO sowie Test und Fehlerbehebung.",
+    result: "Konkreter Beitrag: umgesetzte Berechtigungen, nachvollziehbare Tests und befähigte Administration.",
     tech: ["SAP ERP ECC", "PTNova", "ABAP OO"],
   },
   {
@@ -102,6 +122,7 @@ const projects = [
     company: "DATEV eG · Informationstechnologie",
     role: "Projektleitung & Administration",
     text: "Einführung von SNOW, Optimierung der Lizenzzuordnungen, Vertragsanalyse und Szenarien für Digital Access sowie S/4-Conversion.",
+    result: "Konkreter Beitrag: transparente Lizenzzuordnung und strukturierte Entscheidungsgrundlagen für Optimierungsszenarien.",
     tech: ["SNOW", "S/4HANA", "SAP ERP ECC"],
   },
   {
@@ -232,9 +253,23 @@ const faqs = [
   },
 ];
 
+const featuredProjects = projects.slice(0, 5);
+const earlierProjects = projects.slice(5);
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       <header className="site-header">
         <a className="brand" href="#start" aria-label="SAP Beratung Andreas Klaus – Startseite">
           <span className="brand-mark" aria-hidden="true">AK</span>
@@ -266,24 +301,36 @@ export default function Home() {
           <div className="hero-grid">
             <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
               <div className="hero-portrait">
-                <Image src="/andreas-klaus-tuerkis.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet="/andreas-klaus-480.avif 480w, /andreas-klaus-800.avif 800w, /andreas-klaus-1095.avif 1095w"
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 980px) 620px, 440px"
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet="/andreas-klaus-480.webp 480w, /andreas-klaus-800.webp 800w, /andreas-klaus-1095.webp 1095w"
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 980px) 620px, 440px"
+                  />
+                  <img src="/andreas-klaus-800.webp" alt="Andreas Klaus, SAP-Berater aus Nürnberg" width="800" height="1050" fetchPriority="high" />
+                </picture>
                 <div className="hero-portrait-caption"><span>Direkter Ansprechpartner</span><strong>Andreas Klaus</strong><small>B.Sc. Wirtschaftsinformatik</small></div>
               </div>
               <div className="hero-contact" aria-label="Kontaktdaten">
-                <a href="mailto:info@sapberatungandreasklaus.de"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
-                <a href="tel:+4915235804909"><span>Telefon</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
-                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
+                <a href="mailto:info@sapberatungandreasklaus.de" data-conversion="hero_email"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
+                <a href="tel:+4915235804909" data-conversion="hero_phone"><span>Telefon</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
+                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer" data-conversion="hero_linkedin"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
               </div>
             </aside>
 
             <div className="hero-copy">
-              <p className="eyebrow"><span></span>SAP Entwicklung · Integration · Transformation</p>
-              <h1>Technische SAP-Beratung mit <em>Verantwortung</em> für das Ergebnis.</h1>
+              <p className="eyebrow"><span></span>SAP-Technik für Mittelstand und öffentliche Unternehmen</p>
+              <h1>SAP-Lösungen, die vom Konzept bis zum <em>stabilen Betrieb</em> funktionieren.</h1>
               <p className="hero-lead">
-                Ich bin Andreas Klaus, SAP-Entwickler und technischer Consultant aus Nürnberg. Seit 2010 bringe ich komplexe SAP-Anforderungen von der Konzeption bis in den stabilen Betrieb.
+                Direkte technische Unterstützung für ABAP, Fiori, S/4HANA, Schnittstellen und Berechtigungen – persönlich umgesetzt von Andreas Klaus mit SAP-Projekterfahrung seit 2010.
               </p>
               <div className="hero-actions">
-                <a className="button button-primary" href="mailto:info@sapberatungandreasklaus.de?subject=Anfrage%20für%20ein%20SAP-Erstgespräch">
+                <a className="button button-primary" href="#kontakt" data-conversion="hero_primary">
                   SAP-Thema besprechen <span aria-hidden="true">↗</span>
                 </a>
                 <a className="text-link" href="#projekte">Projekterfahrung <span aria-hidden="true">↓</span></a>
@@ -291,7 +338,7 @@ export default function Home() {
               <div className="trust-row" aria-label="Erfahrung und Profil">
                 <div><strong>15+ Jahre</strong><span>SAP-Berufserfahrung</span></div>
                 <div><strong>18 Projekte</strong><span>im aktuellen Lebenslauf</span></div>
-                <div><strong>Seit 2023</strong><span>freiberuflicher SAP Consultant</span></div>
+                <div><strong>Direkter Kontakt</strong><span>Konzeption und Umsetzung aus einer Hand</span></div>
               </div>
             </div>
 
@@ -314,6 +361,7 @@ export default function Home() {
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
                 <ul aria-label={`Schwerpunkte ${service.title}`}>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+                <Link className="service-link" href={service.href}>Leistung im Detail <span aria-hidden="true">↗</span></Link>
               </article>
             ))}
           </div>
@@ -340,10 +388,10 @@ export default function Home() {
         <section className="section projects" id="projekte">
           <div className="section-intro project-intro">
             <div><p className="eyebrow"><span></span>Projektliste aus dem Lebenslauf</p><h2>Erfahrung, die sich an <em>konkreten Projekten</em> zeigt.</h2></div>
-            <p>18 Projekte von 2010 bis heute – von technischer Entwicklung über Integrationen und Mobile bis zu S/4HANA, Berechtigungen und Projektleitung.</p>
+            <p>Zunächst sehen Sie fünf besonders relevante Projekte. Die vollständige Liste mit 18 Stationen aus dem Lebenslauf bleibt direkt darunter zugänglich.</p>
           </div>
-          <div className="project-list">
-            {projects.map((project, index) => (
+          <div className="project-list featured-projects">
+            {featuredProjects.map((project, index) => (
               <article className="project-card" key={`${project.period}-${project.title}`}>
                 <div className="project-index">{String(index + 1).padStart(2, "0")}</div>
                 <div className="project-main">
@@ -351,11 +399,29 @@ export default function Home() {
                   <h3>{project.title}</h3>
                   <p className="project-company">{project.company}</p>
                   <p>{project.text}</p>
+                  {project.result && <p className="project-result">{project.result}</p>}
                   <ul aria-label={`Technologien ${project.title}`}>{project.tech.map((item) => <li key={item}>{item}</li>)}</ul>
                 </div>
               </article>
             ))}
           </div>
+          <details className="project-archive">
+            <summary><span>Vollständiger Lebenslauf</span>Weitere 13 SAP-Projekte anzeigen <i aria-hidden="true">+</i></summary>
+            <div className="project-list">
+              {earlierProjects.map((project, index) => (
+                <article className="project-card" key={`${project.period}-${project.title}`}>
+                  <div className="project-index">{String(index + 6).padStart(2, "0")}</div>
+                  <div className="project-main">
+                    <div className="project-meta"><span>{project.period}</span><span>{project.role}</span></div>
+                    <h3>{project.title}</h3>
+                    <p className="project-company">{project.company}</p>
+                    <p>{project.text}</p>
+                    <ul aria-label={`Technologien ${project.title}`}>{project.tech.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </details>
         </section>
 
         <section className="section process" id="arbeitsweise">
@@ -403,13 +469,14 @@ export default function Home() {
           <div className="contact-copy">
             <p className="eyebrow eyebrow-light"><span></span>Kontakt</p>
             <h2>Welches SAP-Thema soll <em>vorankommen?</em></h2>
-            <p>Schreiben Sie mir kurz, worum es geht. In einem unverbindlichen Erstgespräch klären wir Ziel, Rahmen und den sinnvollsten nächsten Schritt.</p>
+            <p>Beschreiben Sie kurz System, Aufgabe und gewünschtes Ergebnis. Ich melde mich persönlich und zeitnah mit einer ersten Einordnung.</p>
+            <div className="contact-actions">
+              <a href="mailto:info@sapberatungandreasklaus.de?subject=SAP-Projektanfrage" data-conversion="contact_email"><span>E-Mail schreiben</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
+              <a href="tel:+4915235804909" data-conversion="contact_phone"><span>Direkt anrufen</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
+              <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer" data-conversion="contact_linkedin"><span>Auf LinkedIn vernetzen</span><strong>Andreas Klaus</strong><i aria-hidden="true">↗</i></a>
+            </div>
           </div>
-          <div className="contact-actions">
-            <a href="mailto:info@sapberatungandreasklaus.de?subject=SAP-Projektanfrage"><span>E-Mail schreiben</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
-            <a href="tel:+4915235804909"><span>Direkt anrufen</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
-            <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>Auf LinkedIn vernetzen</span><strong>Andreas Klaus</strong><i aria-hidden="true">↗</i></a>
-          </div>
+          <ContactForm />
         </section>
       </main>
 

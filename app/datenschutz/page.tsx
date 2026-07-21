@@ -27,7 +27,8 @@ export default function Datenschutz() {
       <h2>3. Keine Analyse- oder Marketing-Cookies</h2>
       <p>Diese Website verwendet keine eigenen Analyse-, Tracking- oder Marketing-Cookies. Schriftarten und Gestaltungsmittel werden lokal beziehungsweise direkt mit der Website ausgeliefert. Inhalte externer Plattformen werden nicht automatisch eingebettet.</p>
 
-      <h2>4. Kontaktaufnahme</h2>
+      <h2>4. Kontaktaufnahme und Anfrageformular</h2>
+      <p>Das Anfrageformular überträgt oder speichert keine Eingaben auf dieser Website. Beim Absenden wird aus den eingegebenen Angaben lediglich eine E-Mail in Ihrem lokalen E-Mail-Programm vorbereitet. Erst wenn Sie diese E-Mail selbst versenden, erreichen die Angaben den Verantwortlichen.</p>
       <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, verarbeiten wir die von Ihnen übermittelten Angaben zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen oder vertraglichen Anfragen und im Übrigen Art. 6 Abs. 1 lit. f DSGVO.</p>
 
       <h2>5. Externe Links</h2>
@@ -37,7 +38,7 @@ export default function Datenschutz() {
       <p>Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde.</p>
 
       <h2>7. Aktualität</h2>
-      <p>Stand dieser Datenschutzhinweise: 21. Juli 2026. Die Hinweise sind vor dem endgültigen Wechsel der Unternehmensdomain rechtlich zu prüfen und bei Änderungen der eingesetzten Dienste anzupassen.</p>
+      <p>Stand dieser Datenschutzhinweise: 21. Juli 2026. Bei Änderungen der Website oder der eingesetzten Dienste werden diese Hinweise entsprechend angepasst.</p>
 
       <Link className="back-link" href="/">← Zurück zur Startseite</Link>
     </main>
