@@ -266,7 +266,7 @@ export default function Home() {
           <div className="hero-grid">
             <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
               <div className="hero-portrait">
-                <Image src="/andreas-klaus.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
+                <Image src="/andreas-klaus-tuerkis.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
                 <div className="hero-portrait-caption"><span>Direkter Ansprechpartner</span><strong>Andreas Klaus</strong><small>B.Sc. Wirtschaftsinformatik</small></div>
               </div>
               <div className="hero-contact" aria-label="Kontaktdaten">
