@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -171,10 +172,16 @@ export default function Home() {
         </section>
 
         <section className="section about" id="ueber-mich">
-          <div className="about-signature" aria-hidden="true">
-            <div className="portrait-placeholder">
-              <span>AK</span>
-              <i></i>
+          <div className="about-signature">
+            <div className="portrait-frame">
+              <Image
+                className="portrait-image"
+                src="/andreas-klaus.png"
+                alt="Andreas Klaus, SAP-Berater aus Nürnberg"
+                fill
+                sizes="(max-width: 950px) 360px, 420px"
+              />
+              <span className="portrait-accent">Andreas Klaus</span>
             </div>
             <p>Persönlich verantwortlich.<br/>Technisch auf Augenhöhe.</p>
           </div>

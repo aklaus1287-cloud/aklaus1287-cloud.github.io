@@ -12,6 +12,8 @@ test("exports the complete consulting website", async () => {
   assert.match(html, /Analyse &amp; Konzeption/);
   assert.match(html, /Erstgespräch anfragen/);
   assert.match(html, /info@sapberatungandreasklaus\.de/);
+  assert.match(html, /andreas-klaus\.png/);
+  assert.match(html, /Andreas Klaus, SAP-Berater aus Nürnberg/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
