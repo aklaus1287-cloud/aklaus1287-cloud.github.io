@@ -1,49 +1,234 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
     number: "01",
-    title: "Analyse & Konzeption",
-    text: "Komplexe Ausgangslagen strukturiert bewerten, Anforderungen verständlich machen und tragfähige Lösungswege entwickeln.",
-    tags: ["Prozessanalyse", "Lösungsdesign", "Technische Konzepte"],
+    title: "ABAP & Fiori Entwicklung",
+    text: "Individuelle SAP-Lösungen von der technischen Konzeption bis zur produktionsreifen Umsetzung – nachvollziehbar, wartbar und nah am Geschäftsprozess.",
+    tags: ["ABAP", "ABAP OO", "Fiori", "Adobe Forms"],
   },
   {
     number: "02",
-    title: "Entwicklung & Integration",
-    text: "SAP-Lösungen und Schnittstellen sauber umsetzen – wartbar, nachvollziehbar und passend zur bestehenden Systemlandschaft.",
-    tags: ["SAP-Entwicklung", "Schnittstellen", "Dokumentation"],
+    title: "Integration & Schnittstellen",
+    text: "Robuste Verbindungen zwischen SAP und Drittsystemen – inklusive Architektur, Berechtigungen, Netzwerkkommunikation, Tests und Fehleranalyse.",
+    tags: ["REST", "SOAP", "RFC", "IDoc"],
   },
   {
     number: "03",
-    title: "Stabilisierung & Unterstützung",
-    text: "Kritische Themen fokussiert bearbeiten, Ursachen eingrenzen und Projekte mit eigenständiger Umsetzungskraft verstärken.",
-    tags: ["Fehleranalyse", "Optimierung", "Projektunterstützung"],
+    title: "S/4HANA Transformation",
+    text: "Technische Begleitung von Voruntersuchung, Readiness Check und Code Conversion bis zur Einführung und Stabilisierung der neuen Systemlandschaft.",
+    tags: ["S/4HANA", "ATC", "Code Conversion", "SAP Activate"],
+  },
+  {
+    number: "04",
+    title: "Berechtigungen & Compliance",
+    text: "Berechtigungskonzepte, Benutzeradministration und technische Umsetzung für sichere, prüfbare und im Alltag praktikable SAP-Prozesse.",
+    tags: ["Berechtigungen", "XAMS", "CUA", "Compliance"],
+  },
+  {
+    number: "05",
+    title: "Lizenzen & Optimierung",
+    text: "Transparente Analyse von SAP-Lizenzzuordnungen, Vertrags- und Nutzungsszenarien sowie fundierte Entscheidungsgrundlagen für die Optimierung.",
+    tags: ["SNOW", "Digital Access", "Vermessung", "Optimierung"],
+  },
+  {
+    number: "06",
+    title: "Projektleitung & Stabilisierung",
+    text: "Erfahrene technische Projektsteuerung, strukturierte Testkonzeption und fokussierte Unterstützung in kritischen Projekt- und Betriebsphasen.",
+    tags: ["Projektleitung", "Testing", "Fehleranalyse", "Training"],
   },
 ];
 
-const situations = [
-  "Ein geschäftskritischer SAP-Prozess ist instabil oder schwer wartbar.",
-  "Eine Erweiterung oder Schnittstelle braucht ein belastbares technisches Konzept.",
-  "Fachbereich und IT benötigen eine gemeinsame, verständliche Lösung.",
-  "Ein Projekt braucht kurzfristig erfahrene und eigenständig arbeitende Unterstützung.",
+const expertise = [
+  {
+    title: "Entwicklung",
+    text: "Vom klassischen Report bis zur modernen Fiori-Anwendung.",
+    items: ["ABAP & ABAP OO", "Report- und Dialogprogrammierung", "Fiori", "Web Dynpro", "SAPscript, Smart Forms & Adobe Forms", "Workflows"],
+  },
+  {
+    title: "Integration",
+    text: "Schnittstellen, die auch im produktiven Betrieb belastbar bleiben.",
+    items: ["REST & SOAP Webservices", "RFC & BAPI", "ALE & IDoc", "SFTP / FTPS / Flatfile", "Lobster Data", "SAP Integration Suite"],
+  },
+  {
+    title: "Plattformen & Module",
+    text: "Breiter SAP-Kontext für technisch tragfähige Entscheidungen.",
+    items: ["SAP S/4HANA", "SAP ERP / ECC", "SAP Ariba", "SAP BTP", "MM & WM", "PM, FI & TRM"],
+  },
+  {
+    title: "Security & Methoden",
+    text: "Governance und Zusammenarbeit als Teil der technischen Lösung.",
+    items: ["Benutzer & Berechtigungen", "Zentrale Benutzerverwaltung", "Lizenzoptimierung", "Scrum", "ITIL", "SAP Activate & Jira"],
+  },
+];
+
+const projects = [
+  {
+    period: "seit 06/2025",
+    title: "Schnittstelle für Wertpapierdaten",
+    company: "Thüringer Aufbaubank · Bank- und Finanzwesen",
+    role: "Softwareentwicklung",
+    text: "Konzeption der Schnittstellenarchitektur, ABAP/OO-Entwicklung, Berechtigungs- und Netzwerkdesign, RFC-Anbindung sowie Test und Fehleranalyse.",
+    tech: ["SAP ECC", "REST", "RFC", "WM Datenservice"],
+  },
+  {
+    period: "06/2024 – 03/2025",
+    title: "Proof of Concept SAP Ariba",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "Systemarchitektur, ABAP/OO, Fiori Apps, Berechtigungen, RFC/SOAP/REST-Schnittstellen und Adobe Forms im Ariba-Umfeld.",
+    tech: ["SAP Ariba", "S/4HANA", "Fiori", "Integration Suite"],
+  },
+  {
+    period: "07/2023 – 05/2024",
+    title: "Einführung SAP S/4HANA",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "ABAP/OO-Entwicklung, Code Conversion, Berechtigungen, Fiori Apps, Train-the-Trainer, Testkonzeption und Stabilisierung.",
+    tech: ["SAP ERP ECC", "S/4HANA", "Fiori"],
+  },
+  {
+    period: "03/2023 – 09/2023",
+    title: "SAP-Berechtigungen",
+    company: "Berliner Verkehrsbetriebe · ÖPNV",
+    role: "Berechtigungsentwicklung",
+    text: "Konzeption und Entwicklung von Berechtigungen, Benutzeradministration, Trainings, ABAP/OO sowie Test und Fehlerbehebung.",
+    tech: ["SAP ERP ECC", "PTNova", "ABAP OO"],
+  },
+  {
+    period: "01/2023 – 03/2023",
+    title: "SAP-Lizenzoptimierung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Administration",
+    text: "Einführung von SNOW, Optimierung der Lizenzzuordnungen, Vertragsanalyse und Szenarien für Digital Access sowie S/4-Conversion.",
+    tech: ["SNOW", "S/4HANA", "SAP ERP ECC"],
+  },
+  {
+    period: "08/2022 – 02/2023",
+    title: "Voruntersuchung S/4HANA-Migration",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Entwicklung",
+    text: "Business Case On-Premise vs. RISE, ATC Code Check, Maintenance Planner und S/4HANA Readiness Check.",
+    tech: ["S/4HANA", "ATC", "FI", "MM / WM / PM"],
+  },
+  {
+    period: "06/2021 – 12/2021",
+    title: "Mobile Lagerlogistik in der Instandhaltung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Entwicklung",
+    text: "iPad-Anbindung, mobile Oberflächen und Geschäftslogik für Lagerbewegungen und Inventur mit Mobisys und ABAP.",
+    tech: ["Mobisys MSD/MSB", "WM", "MM", "iOS"],
+  },
+  {
+    period: "06/2020 – 05/2021",
+    title: "Icertis-Vertragsmanagement",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Technische Teilprojektleitung",
+    text: "IDoc-to-REST-Integration, ORDERS- und CREMAS-Erweiterungen, LDAP-Anbindung und technische Security-Analyse.",
+    tech: ["SAP ERP ECC", "IDoc", "REST", "LDAP"],
+  },
+  {
+    period: "01/2019 – 04/2020",
+    title: "Mobile Logistik im Zentrallager",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Entwicklung",
+    text: "Anbindung von iPhones an SAP sowie Entwicklung mobiler Oberflächen und Geschäftslogik in Mobisys und ABAP.",
+    tech: ["SAP ERP ECC", "Mobisys", "WM", "iOS"],
+  },
+  {
+    period: "06/2018 – 12/2018",
+    title: "ERP- und SRM-EHP-Upgrade",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Entwicklung",
+    text: "Upgrade, ABAP-Fehlerbereinigung, SPAU/SPAM-Nacharbeiten, Testkoordination und Transportmanagement.",
+    tech: ["SAP ERP 6.0", "SRM 7.0", "SPAU / SPAM", "ABAP OO"],
+  },
+  {
+    period: "01/2017 – 11/2017",
+    title: "EAI mit Lobster Data",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Projektleitung & Entwicklung",
+    text: "RFC- und IDoc-Anbindung, BAPI-Anpassungen, Migration von Seeburger-Profilen und IT-Security-Analyse.",
+    tech: ["Lobster Data", "RFC", "IDoc", "ABAP OO"],
+  },
+  {
+    period: "04/2016 – 12/2016",
+    title: "Mobile Prozesse Instandhaltung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "Mobile Prozesse für Entstörung, Wartung, Schichtbuch und Ersatzteilentnahme inklusive PM-Customizing.",
+    tech: ["SAP PM", "MM", "Mobisys", "ABAP OO"],
+  },
+  {
+    period: "07/2015 – 03/2016",
+    title: "SAP Treasury Management",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "ABAP-Reports, BAPI/BAdI-Programmierung, automatische Sachkontenfindung, Flatfile-Schnittstellen und TRM-Customizing.",
+    tech: ["SAP TRM", "FI", "BAPI / BAdI", "ABAP OO"],
+  },
+  {
+    period: "11/2014 – 06/2015",
+    title: "Mobile Lagerhaltung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "Handscanner-Anbindung, Mobisys-Oberflächen, ABAP-Geschäftslogik, WM-Customizing und Jobsteuerung.",
+    tech: ["SAP WM", "MM", "Mobisys", "ABAP OO"],
+  },
+  {
+    period: "01/2013 – 10/2013",
+    title: "Eigenentwicklung Reisekostenabrechnung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "Datenmodell, Rechnungseingang per Flatfile, Abrechnungsverbuchung in ABAP OO und Stammdatenmigration mit LSMW.",
+    tech: ["SAP FI", "LSMW", "Flatfile", "ABAP OO"],
+  },
+  {
+    period: "01/2012 – 11/2012",
+    title: "SAP R/3 EHP-Upgrade",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Softwareentwicklung",
+    text: "Upgrade, Fehlerbereinigung im Kundennamensraum, SPAU/SPAM-Nacharbeiten und Transportmanagement.",
+    tech: ["SAP ERP", "FI / MM / WM / PM", "SPAU / SPAM", "ABAP OO"],
+  },
+  {
+    period: "04/2011 – 09/2011",
+    title: "Upgrade Kreditorenbuchhaltung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Technisches SAP Consulting",
+    text: "Upgrade von AFI DirectInvoiceControl, Rechnungsprüfungslogik, SAPscript und Genehmigungsworkflow.",
+    tech: ["SAP FI-AP", "AFI DIC", "SAPscript", "Workflow"],
+  },
+  {
+    period: "10/2010 – 03/2011",
+    title: "Zentrale Benutzerverwaltung",
+    company: "DATEV eG · Informationstechnologie",
+    role: "Technisches SAP Consulting",
+    text: "Konzeption und Customizing der CUA, ABAP-Reports, Systemanbindung und Training der Benutzeradministration.",
+    tech: ["SAP ERP", "SAP SRM", "Solution Manager", "CUA"],
+  },
 ];
 
 const steps = [
+  { number: "01", title: "Verstehen", text: "Ziel, Systemkontext, Abhängigkeiten und den tatsächlichen Engpass sauber einordnen." },
+  { number: "02", title: "Entscheiden", text: "Lösungsweg, Abgrenzung, Risiken und messbares Ergebnis transparent festlegen." },
+  { number: "03", title: "Umsetzen", text: "Eigenständig entwickeln, eng abstimmen, testen und nachvollziehbar dokumentieren." },
+  { number: "04", title: "Stabilisieren", text: "Wissen übergeben, Fehlerquellen absichern und die Lösung sicher in den Betrieb bringen." },
+];
+
+const faqs = [
   {
-    number: "01",
-    title: "Klären",
-    text: "Wir ordnen Ziel, Systemkontext und den eigentlichen Engpass in einem ersten Gespräch ein.",
+    question: "Für welche SAP-Themen ist Andreas Klaus der richtige Ansprechpartner?",
+    answer: "Besonders für technische SAP-Aufgaben rund um ABAP/OO, Fiori, Schnittstellen, S/4HANA-Transformation, Berechtigungen, Lizenzoptimierung und mobile Logistikprozesse.",
   },
   {
-    number: "02",
-    title: "Planen",
-    text: "Vorgehen, Abgrenzung, Risiken und gewünschtes Ergebnis werden transparent festgelegt.",
+    question: "Ist eine Zusammenarbeit remote möglich?",
+    answer: "Ja. Projekte können remote sowie nach Absprache vor Ort begleitet werden. Der Schwerpunkt liegt auf einer klaren, direkten Zusammenarbeit mit kurzen Abstimmungswegen.",
   },
   {
-    number: "03",
-    title: "Umsetzen",
-    text: "Die Lösung wird pragmatisch realisiert, nachvollziehbar dokumentiert und sauber übergeben.",
+    question: "Sind auch klar abgegrenzte Einzelaufgaben möglich?",
+    answer: "Ja. Neben längeren Projekten sind technische Analysen, Proofs of Concept, Schnittstellen, Reviews, Fehleranalysen und gezielte Entwicklungsaufgaben möglich.",
   },
 ];
 
@@ -53,26 +238,25 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#start" aria-label="SAP Beratung Andreas Klaus – Startseite">
           <span className="brand-mark" aria-hidden="true">AK</span>
-          <span className="brand-copy">
-            <strong>SAP Beratung</strong>
-            <span>Andreas Klaus</span>
-          </span>
+          <span className="brand-copy"><strong>SAP Beratung</strong><span>Andreas Klaus</span></span>
         </a>
 
         <nav className="desktop-nav" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a>
-          <a href="#arbeitsweise">Arbeitsweise</a>
+          <a href="#kompetenzen">Kompetenzen</a>
+          <a href="#projekte">Projekte</a>
           <a href="#ueber-mich">Über mich</a>
-          <a className="nav-cta" href="#kontakt">Erstgespräch</a>
+          <a className="nav-cta" href="#kontakt">Kontakt</a>
         </nav>
 
         <details className="mobile-nav">
           <summary aria-label="Navigation öffnen"><span></span><span></span></summary>
           <nav aria-label="Mobile Navigation">
             <a href="#leistungen">Leistungen</a>
-            <a href="#arbeitsweise">Arbeitsweise</a>
+            <a href="#kompetenzen">Kompetenzen</a>
+            <a href="#projekte">Projekte</a>
             <a href="#ueber-mich">Über mich</a>
-            <a href="#kontakt">Erstgespräch</a>
+            <a href="#kontakt">Kontakt</a>
           </nav>
         </details>
       </header>
@@ -81,172 +265,163 @@ export default function Home() {
         <section className="hero" id="start">
           <div className="hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow"><span></span>SAP Beratung · Nürnberg & Remote</p>
-              <h1>SAP-Beratung, die im <em>Tagesgeschäft</em> funktioniert.</h1>
+              <p className="eyebrow"><span></span>SAP Entwicklung · Integration · Transformation</p>
+              <h1>Technische SAP-Beratung mit <em>Verantwortung</em> für das Ergebnis.</h1>
               <p className="hero-lead">
-                Ich unterstütze Unternehmen bei der Analyse, Umsetzung und Stabilisierung anspruchsvoller SAP-Lösungen – persönlich, pragmatisch und mit über 15 Jahren Berufserfahrung.
+                Ich bin Andreas Klaus, SAP-Entwickler und technischer Consultant aus Nürnberg. Seit 2010 bringe ich komplexe SAP-Anforderungen von der Konzeption bis in den stabilen Betrieb.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="mailto:info@sapberatungandreasklaus.de?subject=Anfrage%20für%20ein%20SAP-Erstgespräch">
-                  Erstgespräch anfragen <span aria-hidden="true">↗</span>
+                  SAP-Thema besprechen <span aria-hidden="true">↗</span>
                 </a>
-                <a className="text-link" href="#leistungen">Leistungen ansehen <span aria-hidden="true">↓</span></a>
+                <a className="text-link" href="#projekte">Projekterfahrung <span aria-hidden="true">↓</span></a>
               </div>
-              <div className="trust-row" aria-label="Erfahrung und Arbeitsweise">
-                <div><strong>15+</strong><span>Jahre Erfahrung</span></div>
-                <div><strong>Direkt</strong><span>Persönlicher Ansprechpartner</span></div>
-                <div><strong>Pragmatisch</strong><span>Von Analyse bis Umsetzung</span></div>
+              <div className="trust-row" aria-label="Erfahrung und Profil">
+                <div><strong>15+ Jahre</strong><span>SAP-Berufserfahrung</span></div>
+                <div><strong>18 Projekte</strong><span>im aktuellen Lebenslauf</span></div>
+                <div><strong>Seit 2023</strong><span>freiberuflicher SAP Consultant</span></div>
               </div>
             </div>
 
             <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
               <div className="hero-portrait">
-                <Image
-                  src="/andreas-klaus.png"
-                  alt="Andreas Klaus, SAP-Berater aus Nürnberg"
-                  fill
-                  priority
-                  sizes="(max-width: 950px) 100vw, 440px"
-                />
-                <div className="hero-portrait-caption">
-                  <span>Ihr Ansprechpartner</span>
-                  <strong>Andreas Klaus</strong>
-                </div>
+                <Image src="/andreas-klaus.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
+                <div className="hero-portrait-caption"><span>Direkter Ansprechpartner</span><strong>Andreas Klaus</strong><small>B.Sc. Wirtschaftsinformatik</small></div>
               </div>
               <div className="hero-contact" aria-label="Kontaktdaten">
-                <a href="mailto:info@sapberatungandreasklaus.de">
-                  <span>E-Mail</span>
-                  <strong>info@sapberatungandreasklaus.de</strong>
-                  <i aria-hidden="true">↗</i>
-                </a>
-                <a href="tel:+4915235804909">
-                  <span>Telefon</span>
-                  <strong>+49 152 35804909</strong>
-                  <i aria-hidden="true">↗</i>
-                </a>
-                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer">
-                  <span>LinkedIn</span>
-                  <strong>Profil ansehen</strong>
-                  <i aria-hidden="true">↗</i>
-                </a>
+                <a href="mailto:info@sapberatungandreasklaus.de"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
+                <a href="tel:+4915235804909"><span>Telefon</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
+                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
               </div>
             </aside>
           </div>
         </section>
 
-        <section className="section services" id="leistungen">
-          <div className="section-heading">
-            <p className="eyebrow"><span></span>Leistungen</p>
-            <h2>Vom komplexen Thema zur <em>tragfähigen Lösung.</em></h2>
-            <p>Keine Standardpakete, sondern fokussierte Unterstützung entlang Ihrer konkreten SAP-Aufgabe.</p>
-          </div>
+        <section className="proof-strip" aria-label="SAP-Schwerpunkte">
+          <span>SAP S/4HANA</span><span>ABAP / ABAP OO</span><span>SAP Fiori</span><span>REST · SOAP · RFC · IDoc</span><span>Berechtigungen</span><span>Projektleitung</span>
+        </section>
 
+        <section className="section services" id="leistungen">
+          <div className="section-intro">
+            <div><p className="eyebrow"><span></span>Leistungen</p><h2>Technische Tiefe trifft <em>pragmatische Umsetzung.</em></h2></div>
+            <p>Unterstützung dort, wo SAP-Projekte konkrete Ergebnisse brauchen: in der Architektur, Entwicklung, Integration, Absicherung und Übergabe.</p>
+          </div>
           <div className="service-grid">
             {services.map((service) => (
               <article className="service-card" key={service.number}>
-                <div className="card-number">{service.number}</div>
+                <span className="card-number">{service.number}</span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
-                <ul aria-label={`Schwerpunkte ${service.title}`}>
-                  {service.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
+                <ul aria-label={`Schwerpunkte ${service.title}`}>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section situations">
-          <div className="situations-copy">
-            <p className="eyebrow eyebrow-light"><span></span>Typische Projektsituationen</p>
-            <h2>Wenn aus Komplexität wieder <em>Handlungsfähigkeit</em> werden soll.</h2>
-            <p>Gute SAP-Beratung beginnt nicht mit einer Technologie, sondern mit einem klaren Verständnis für das Problem und sein Umfeld.</p>
+        <section className="section expertise" id="kompetenzen">
+          <div className="expertise-head">
+            <p className="eyebrow eyebrow-light"><span></span>Kompetenzen aus dem Profil</p>
+            <h2>Breit im SAP-Kontext.<br/><em>Tief in der Technik.</em></h2>
+            <p>Die Kombination aus Entwicklung, Schnittstellenwissen, Prozessverständnis und Projekterfahrung verkürzt Abstimmungen und macht Lösungen belastbarer.</p>
           </div>
-          <ol className="situation-list">
-            {situations.map((situation, index) => (
-              <li key={situation}>
+          <div className="expertise-grid">
+            {expertise.map((group, index) => (
+              <article key={group.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{situation}</p>
-              </li>
+                <h3>{group.title}</h3>
+                <p>{group.text}</p>
+                <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+              </article>
             ))}
-          </ol>
+          </div>
         </section>
 
-        <section className="section process" id="arbeitsweise">
-          <div className="section-heading compact">
-            <p className="eyebrow"><span></span>Arbeitsweise</p>
-            <h2>Klar in der Abstimmung.<br/><em>Verlässlich in der Umsetzung.</em></h2>
+        <section className="section projects" id="projekte">
+          <div className="section-intro project-intro">
+            <div><p className="eyebrow"><span></span>Projektliste aus dem Lebenslauf</p><h2>Erfahrung, die sich an <em>konkreten Projekten</em> zeigt.</h2></div>
+            <p>18 Projekte von 2010 bis heute – von technischer Entwicklung über Integrationen und Mobile bis zu S/4HANA, Berechtigungen und Projektleitung.</p>
           </div>
-          <div className="process-grid">
-            {steps.map((step) => (
-              <article className="process-step" key={step.number}>
-                <span>{step.number}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
+          <div className="project-list">
+            {projects.map((project, index) => (
+              <article className="project-card" key={`${project.period}-${project.title}`}>
+                <div className="project-index">{String(index + 1).padStart(2, "0")}</div>
+                <div className="project-main">
+                  <div className="project-meta"><span>{project.period}</span><span>{project.role}</span></div>
+                  <h3>{project.title}</h3>
+                  <p className="project-company">{project.company}</p>
+                  <p>{project.text}</p>
+                  <ul aria-label={`Technologien ${project.title}`}>{project.tech.map((item) => <li key={item}>{item}</li>)}</ul>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
+        <section className="section process" id="arbeitsweise">
+          <div className="process-copy">
+            <p className="eyebrow"><span></span>Zusammenarbeit</p>
+            <h2>Klarer Prozess.<br/><em>Kurze Wege.</em></h2>
+            <p>Sie sprechen vom ersten Termin bis zur Übergabe direkt mit demjenigen, der die technische Arbeit verantwortet.</p>
+            <a className="text-link" href="#kontakt">Erstgespräch vereinbaren <span aria-hidden="true">↘</span></a>
+          </div>
+          <ol className="process-grid">
+            {steps.map((step) => (
+              <li className="process-step" key={step.number}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>
+            ))}
+          </ol>
+        </section>
+
         <section className="section about" id="ueber-mich">
-          <div className="about-signature">
+          <div className="about-visual">
             <div className="portrait-frame">
-              <Image
-                className="portrait-image"
-                src="/andreas-klaus.png"
-                alt="Andreas Klaus, SAP-Berater aus Nürnberg"
-                fill
-                sizes="(max-width: 950px) 360px, 420px"
-              />
-              <span className="portrait-accent">Andreas Klaus</span>
+              <Image className="portrait-image" src="/andreas-klaus.png" alt="Andreas Klaus, technischer SAP Consultant" fill sizes="(max-width: 980px) 90vw, 440px" />
+              <span className="portrait-accent">Nürnberg · Remote</span>
             </div>
-            <p>Persönlich verantwortlich.<br/>Technisch auf Augenhöhe.</p>
+            <div className="about-quote">„Technik muss nicht nur funktionieren. Sie muss verständlich, wartbar und im Betrieb tragfähig sein.“</div>
           </div>
           <div className="about-copy">
-            <p className="eyebrow"><span></span>Über mich</p>
-            <h2>Erfahrung zeigt sich darin, <em>Komplexität verständlich</em> zu machen.</h2>
-            <p className="about-lead">Ich bin Andreas Klaus, SAP-Berater aus Nürnberg. Seit über 15 Jahren arbeite ich an der Schnittstelle von fachlichen Anforderungen, technischen Systemen und verlässlicher Umsetzung.</p>
-            <p>Meine Arbeitsweise ist direkt und lösungsorientiert: genau zuhören, Zusammenhänge sauber strukturieren und das Vereinbarte eigenständig voranbringen. Dabei bleiben Entscheidungen, Risiken und Ergebnisse für alle Beteiligten nachvollziehbar.</p>
-            <div className="about-principles">
-              <span>Struktur vor Aktionismus</span>
-              <span>Verständlichkeit vor Buzzwords</span>
-              <span>Verantwortung statt Übergaben</span>
+            <p className="eyebrow"><span></span>Über Andreas Klaus</p>
+            <h2>Ein Ansprechpartner für <em>Konzeption und Umsetzung.</em></h2>
+            <p className="about-lead">Seit 2010 entwickle und begleite ich SAP-Lösungen im Unternehmensumfeld, seit 2023 zusätzlich als freiberuflicher SAP Consultant.</p>
+            <p>Mein Studium der Wirtschaftsinformatik und die langjährige Arbeit im SAP Competence Center verbinden betriebswirtschaftliches Verständnis mit technischer Tiefe. Ich übernehme Verantwortung, strukturiere komplexe Situationen und bringe Themen eigenständig voran.</p>
+            <div className="bio-facts">
+              <div><span>Studium</span><strong>B.Sc. Wirtschaftsinformatik</strong></div>
+              <div><span>Standort</span><strong>Nürnberg · deutschlandweit remote</strong></div>
+              <div><span>Sprachen</span><strong>Deutsch · Englisch</strong></div>
+              <div><span>Arbeitsweise</span><strong>Direkt · strukturiert · lösungsorientiert</strong></div>
             </div>
+          </div>
+        </section>
+
+        <section className="section faq" id="faq">
+          <div className="faq-head"><p className="eyebrow"><span></span>Häufige Fragen</p><h2>Vor dem ersten <em>Gespräch.</em></h2></div>
+          <div className="faq-list">
+            {faqs.map((faq, index) => (
+              <details key={faq.question} open={index === 0}>
+                <summary><span>{String(index + 1).padStart(2, "0")}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </section>
 
         <section className="contact" id="kontakt">
           <div className="contact-copy">
             <p className="eyebrow eyebrow-light"><span></span>Kontakt</p>
-            <h2>Lassen Sie uns Ihr SAP-Thema <em>strukturiert angehen.</em></h2>
-            <p>In einem kurzen Erstgespräch klären wir Ausgangslage, Ziel und ob ich der passende Ansprechpartner bin.</p>
+            <h2>Welches SAP-Thema soll <em>vorankommen?</em></h2>
+            <p>Schreiben Sie mir kurz, worum es geht. In einem unverbindlichen Erstgespräch klären wir Ziel, Rahmen und den sinnvollsten nächsten Schritt.</p>
           </div>
           <div className="contact-actions">
-            <a className="contact-primary" href="mailto:info@sapberatungandreasklaus.de?subject=Anfrage%20für%20ein%20SAP-Erstgespräch">
-              <span>E-Mail schreiben</span>
-              <strong>info@sapberatungandreasklaus.de</strong>
-              <i aria-hidden="true">↗</i>
-            </a>
-            <a className="contact-secondary" href="tel:+4915235804909">
-              <span>Direkt anrufen</span>
-              <strong>+49 152 35804909</strong>
-              <i aria-hidden="true">↗</i>
-            </a>
+            <a href="mailto:info@sapberatungandreasklaus.de?subject=SAP-Projektanfrage"><span>E-Mail schreiben</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
+            <a href="tel:+4915235804909"><span>Direkt anrufen</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
+            <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>Auf LinkedIn vernetzen</span><strong>Andreas Klaus</strong><i aria-hidden="true">↗</i></a>
           </div>
         </section>
       </main>
 
       <footer>
-        <div className="footer-brand">
-          <span className="brand-mark" aria-hidden="true">AK</span>
-          <p><strong>SAP Beratung Andreas Klaus</strong><br/>Nürnberg · Deutschland</p>
-        </div>
-        <div className="footer-links">
-          <Link href="/impressum/">Impressum</Link>
-          <Link href="/datenschutz/">Datenschutz</Link>
-          <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-        </div>
+        <div className="footer-brand"><span className="brand-mark" aria-hidden="true">AK</span><p><strong>SAP Beratung Andreas Klaus</strong><br/>Technische SAP-Beratung · Nürnberg & Remote</p></div>
+        <div className="footer-links"><a href="#start">Nach oben</a><Link href="/impressum/">Impressum</Link><Link href="/datenschutz/">Datenschutz</Link></div>
         <p className="copyright">© {new Date().getFullYear()} Andreas Klaus</p>
       </footer>
     </>
