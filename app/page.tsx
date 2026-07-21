@@ -44,6 +44,13 @@ const services = [
     tags: ["Projektleitung", "Testing", "Fehleranalyse", "Training"],
     href: "/leistungen/technische-sap-beratung/",
   },
+  {
+    number: "07",
+    title: "SAP Personalvermittlung",
+    text: "Fachlich fundierte Vermittlung passender SAP-Consultants und SAP-Entwickler – vom klaren Anforderungsprofil bis zur strukturierten Vorstellung geeigneter Fachkräfte.",
+    tags: ["SAP Recruiting", "Fachprofile", "Direktvermittlung", "Projektbesetzung"],
+    href: "/leistungen/sap-personalvermittlung/",
+  },
 ];
 
 const expertise = [
@@ -324,7 +331,6 @@ export default function Home() {
             </aside>
 
             <div className="hero-copy">
-              <p className="eyebrow"><span></span>SAP-Technik für Mittelstand und öffentliche Unternehmen</p>
               <h1>SAP-Lösungen, die vom Konzept bis zum <em>stabilen Betrieb</em> funktionieren.</h1>
               <p className="hero-lead">
                 Direkte technische Unterstützung für ABAP, Fiori, S/4HANA, Schnittstellen und Berechtigungen – persönlich umgesetzt von Andreas Klaus mit SAP-Projekterfahrung seit 2010.
@@ -346,7 +352,7 @@ export default function Home() {
         </section>
 
         <section className="proof-strip" aria-label="SAP-Schwerpunkte">
-          <span>SAP S/4HANA</span><span>ABAP / ABAP OO</span><span>SAP Fiori</span><span>REST · SOAP · RFC · IDoc</span><span>Berechtigungen</span><span>Projektleitung</span>
+          <span>SAP S/4HANA</span><span>ABAP / ABAP OO</span><span>SAP Fiori</span><span>REST · SOAP · RFC · IDoc</span><span>Berechtigungen</span><span>SAP Personalvermittlung</span>
         </section>
 
         <section className="section services" id="leistungen">
@@ -442,7 +448,7 @@ export default function Home() {
           <div className="about-copy">
             <p className="eyebrow"><span></span>Über Andreas Klaus</p>
             <h2>Ein Ansprechpartner für <em>Konzeption und Umsetzung.</em></h2>
-            <p className="about-lead">Seit 2010 entwickle und begleite ich SAP-Lösungen im Unternehmensumfeld, seit 2023 zusätzlich als freiberuflicher SAP Consultant.</p>
+            <p className="about-lead">Seit 2010 entwickle und begleite ich SAP-Lösungen im Unternehmensumfeld – von der technischen Konzeption bis zur stabilen Übergabe.</p>
             <p>Mein Studium der Wirtschaftsinformatik und die langjährige Arbeit im SAP Competence Center verbinden betriebswirtschaftliches Verständnis mit technischer Tiefe. Ich übernehme Verantwortung, strukturiere komplexe Situationen und bringe Themen eigenständig voran.</p>
             <div className="bio-facts">
               <div><span>Studium</span><strong>B.Sc. Wirtschaftsinformatik</strong></div>

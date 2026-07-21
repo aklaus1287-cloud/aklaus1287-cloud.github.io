@@ -5,8 +5,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sapberatungandreasklaus.de"),
   title: "Technische SAP-Beratung & ABAP-Entwicklung | Andreas Klaus",
-  description: "SAP-Beratung für ABAP/OO, Fiori, S/4HANA, Schnittstellen, Berechtigungen und Lizenzoptimierung. Über 15 Jahre Projekterfahrung – in Nürnberg und remote.",
-  keywords: ["SAP Beratung", "SAP Berater Nürnberg", "ABAP Entwickler", "SAP S/4HANA", "SAP Fiori", "SAP Schnittstellen", "SAP Berechtigungen", "Andreas Klaus"],
+  description: "SAP-Beratung für ABAP/OO, Fiori, S/4HANA, Schnittstellen, Berechtigungen und SAP Personalvermittlung. Über 15 Jahre Projekterfahrung – in Nürnberg und remote.",
+  keywords: ["SAP Beratung", "SAP Berater Nürnberg", "ABAP Entwickler", "SAP S/4HANA", "SAP Fiori", "SAP Schnittstellen", "SAP Berechtigungen", "SAP Personalvermittlung", "Andreas Klaus"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -60,6 +60,7 @@ const organizationData = {
     "SAP-Schnittstellen",
     "SAP-Berechtigungen",
     "SAP-Lizenzoptimierung",
+    "SAP Personalvermittlung",
   ],
 };
 

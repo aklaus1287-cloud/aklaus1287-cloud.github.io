@@ -9,6 +9,8 @@ export type ServicePage = {
   deliverables: string[];
   technologies: string[];
   projectExamples: { title: string; text: string }[];
+  examplesEyebrow?: string;
+  examplesTitle?: string;
 };
 
 export const servicePages: ServicePage[] = [
@@ -179,6 +181,42 @@ export const servicePages: ServicePage[] = [
       {
         title: "ERP- und SRM-Upgrade",
         text: "Projektsteuerung, ABAP-Fehlerbereinigung, Testkoordination und Transportmanagement.",
+      },
+    ],
+  },
+  {
+    slug: "sap-personalvermittlung",
+    title: "SAP Personalvermittlung",
+    shortTitle: "Personalvermittlung",
+    description:
+      "Fachlich fundierte SAP Personalvermittlung für passende SAP-Consultants und SAP-Entwickler – mit klaren Anforderungen und strukturierter Vorauswahl.",
+    eyebrow: "SAP Recruiting",
+    intro:
+      "Gute SAP-Personalvermittlung beginnt mit einem präzisen Verständnis der Aufgabe. Ich unterstütze Unternehmen dabei, technische und fachliche Anforderungen sauber einzuordnen, passende SAP-Fachkräfte zu identifizieren und Profile nachvollziehbar vorzustellen.",
+    benefits: [
+      "SAP-Fachwissen sorgt für klarere Anforderungsprofile",
+      "Profile werden passend zu Systemlandschaft, Aufgabe und Rolle eingeordnet",
+      "Direkte Abstimmung reduziert unnötige Schleifen im Auswahlprozess",
+    ],
+    deliverables: [
+      "Aufnahme und Schärfung des SAP-Anforderungsprofils",
+      "Suche nach geeigneten SAP-Consultants und SAP-Entwicklern",
+      "Fachliche Einordnung und strukturierte Vorauswahl",
+      "Nachvollziehbare Vorstellung geeigneter Profile",
+      "Unterstützung bei der Vorbereitung von Fachgesprächen",
+      "Koordination bis zur erfolgreichen Besetzungsentscheidung",
+    ],
+    technologies: ["SAP Consulting", "ABAP", "S/4HANA", "Fiori", "Integration", "Berechtigungen"],
+    examplesEyebrow: "Vermittlungsprozess",
+    examplesTitle: "Fachlich passend statt nur formal ähnlich.",
+    projectExamples: [
+      {
+        title: "Anforderungen verstehen",
+        text: "Rolle, Systemumfeld, fachliche Schwerpunkte und gewünschte Zusammenarbeit werden vor der Suche präzise geklärt.",
+      },
+      {
+        title: "Profile fundiert einordnen",
+        text: "Geeignete Fachkräfte werden mit ihren SAP-Schwerpunkten, Erfahrungen und ihrer Passung zur konkreten Aufgabe vorgestellt.",
       },
     ],
   },

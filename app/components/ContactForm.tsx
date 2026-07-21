@@ -56,6 +56,7 @@ export default function ContactForm() {
           <option>S/4HANA</option>
           <option>Berechtigungen</option>
           <option>Technische SAP-Beratung</option>
+          <option>SAP Personalvermittlung</option>
           <option>Andere Anfrage</option>
         </select>
       </label>

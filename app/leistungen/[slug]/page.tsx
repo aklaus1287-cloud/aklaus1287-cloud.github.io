@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
         <section className="service-projects">
           <div className="section-intro">
-            <div><p className="eyebrow eyebrow-light"><span></span>Passende Projekterfahrung</p><h2>Erprobt in konkreten SAP-Projekten.</h2></div>
+            <div><p className="eyebrow eyebrow-light"><span></span>{service.examplesEyebrow ?? "Passende Projekterfahrung"}</p><h2>{service.examplesTitle ?? "Erprobt in konkreten SAP-Projekten."}</h2></div>
             <p>{service.technologies.join(" · ")}</p>
           </div>
           <div className="service-project-grid">
