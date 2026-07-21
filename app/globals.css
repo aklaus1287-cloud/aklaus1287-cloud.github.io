@@ -86,7 +86,7 @@ em { color: var(--aqua); font-family: Georgia, "Times New Roman", serif; font-st
   pointer-events: none;
   position: absolute;
 }
-.hero-grid { align-items: center; display: grid; gap: 72px; grid-template-columns: 1.13fr .87fr; margin: 0 auto; max-width: var(--max); position: relative; }
+.hero-grid { align-items: center; display: grid; gap: 72px; grid-template-columns: .87fr 1.13fr; margin: 0 auto; max-width: var(--max); position: relative; }
 .eyebrow { align-items: center; color: var(--blue); display: flex; font-size: 11px; font-weight: 850; gap: 10px; letter-spacing: .15em; margin: 0 0 21px; text-transform: uppercase; }
 .eyebrow > span { background: var(--aqua); height: 2px; width: 28px; }
 .hero h1, .section h2, .contact h2 { color: var(--navy); font-size: clamp(47px, 5.15vw, 75px); letter-spacing: -.056em; line-height: .99; margin: 0; }
@@ -181,13 +181,8 @@ em { color: var(--aqua); font-family: Georgia, "Times New Roman", serif; font-st
 .process-step h3 { color: var(--navy); font-size: 24px; margin: 0 0 5px; }
 .process-step p { color: var(--muted); font-size: 13px; margin: 0; max-width: 590px; }
 
-.about { align-items: center; background: white; display: grid; gap: 100px; grid-template-columns: .82fr 1.18fr; }
-.about-visual { max-width: 450px; }
-.portrait-frame { aspect-ratio: 4/5; background: var(--sky); border: 1px solid #99dfe7; box-shadow: 20px 20px 0 #d5f5f8; overflow: hidden; position: relative; }
-.portrait-frame::after { background: linear-gradient(180deg, transparent 62%, rgba(3, 41, 52, .66)); content: ""; inset: 0; pointer-events: none; position: absolute; }
-.portrait-image { object-fit: cover; object-position: 52% 33%; }
-.portrait-accent { bottom: 20px; color: white; font-size: 10px; font-weight: 850; left: 22px; letter-spacing: .13em; position: absolute; text-transform: uppercase; z-index: 2; }
-.about-quote { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-style: italic; line-height: 1.5; margin: 35px 0 0 22px; max-width: 390px; }
+.about { background: white; }
+.about-copy { margin: 0 auto; max-width: 900px; }
 .about-copy h2 { font-size: clamp(38px, 4vw, 58px); }
 .about-copy > p { color: var(--muted); }
 .about-copy .about-lead { color: var(--text); font-size: 17px; line-height: 1.75; margin-top: 28px; }
@@ -252,7 +247,6 @@ footer { align-items: center; background: var(--navy-deep); color: white; displa
   .expertise, .process, .about, .faq, .contact { gap: 58px; grid-template-columns: 1fr; }
   .expertise-head { max-width: 700px; }
   .process-copy { max-width: 700px; position: static; }
-  .about-visual { max-width: 410px; }
   footer { grid-template-columns: 1fr; }
 }
 

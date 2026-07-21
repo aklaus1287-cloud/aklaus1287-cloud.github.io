@@ -264,6 +264,18 @@ export default function Home() {
       <main>
         <section className="hero" id="start">
           <div className="hero-grid">
+            <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
+              <div className="hero-portrait">
+                <Image src="/andreas-klaus.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
+                <div className="hero-portrait-caption"><span>Direkter Ansprechpartner</span><strong>Andreas Klaus</strong><small>B.Sc. Wirtschaftsinformatik</small></div>
+              </div>
+              <div className="hero-contact" aria-label="Kontaktdaten">
+                <a href="mailto:info@sapberatungandreasklaus.de"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
+                <a href="tel:+4915235804909"><span>Telefon</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
+                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
+              </div>
+            </aside>
+
             <div className="hero-copy">
               <p className="eyebrow"><span></span>SAP Entwicklung · Integration · Transformation</p>
               <h1>Technische SAP-Beratung mit <em>Verantwortung</em> für das Ergebnis.</h1>
@@ -283,17 +295,6 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="hero-profile" aria-label="Andreas Klaus und direkte Kontaktmöglichkeiten">
-              <div className="hero-portrait">
-                <Image src="/andreas-klaus.png" alt="Andreas Klaus, SAP-Berater aus Nürnberg" fill priority sizes="(max-width: 980px) 100vw, 440px" />
-                <div className="hero-portrait-caption"><span>Direkter Ansprechpartner</span><strong>Andreas Klaus</strong><small>B.Sc. Wirtschaftsinformatik</small></div>
-              </div>
-              <div className="hero-contact" aria-label="Kontaktdaten">
-                <a href="mailto:info@sapberatungandreasklaus.de"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
-                <a href="tel:+4915235804909"><span>Telefon</span><strong>+49 152 35804909</strong><i aria-hidden="true">↗</i></a>
-                <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
-              </div>
-            </aside>
           </div>
         </section>
 
@@ -372,13 +373,6 @@ export default function Home() {
         </section>
 
         <section className="section about" id="ueber-mich">
-          <div className="about-visual">
-            <div className="portrait-frame">
-              <Image className="portrait-image" src="/andreas-klaus.png" alt="Andreas Klaus, technischer SAP Consultant" fill sizes="(max-width: 980px) 90vw, 440px" />
-              <span className="portrait-accent">Nürnberg · Remote</span>
-            </div>
-            <div className="about-quote">„Technik muss nicht nur funktionieren. Sie muss verständlich, wartbar und im Betrieb tragfähig sein.“</div>
-          </div>
           <div className="about-copy">
             <p className="eyebrow"><span></span>Über Andreas Klaus</p>
             <h2>Ein Ansprechpartner für <em>Konzeption und Umsetzung.</em></h2>
