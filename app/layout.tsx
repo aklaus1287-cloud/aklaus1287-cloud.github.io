@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ConversionEvents from "./components/ConversionEvents";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }} />
         <ConversionEvents />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

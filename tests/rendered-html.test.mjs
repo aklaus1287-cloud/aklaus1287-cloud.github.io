@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -58,4 +58,19 @@ test("publishes indexable service copy and legacy canonical redirects", async ()
   assert.match(redirectHtml, /url=\/impressum\//);
   assert.match(redirectHtml, /noindex/);
   assert.match(sitemap, /leistungen\/s4hana-beratung/);
+});
+
+test("ships consent-first Google Analytics and updated privacy information", async () => {
+  const homeHtml = await readFile(new URL("out/index.html", root), "utf8");
+  const privacyHtml = await readFile(new URL("out/datenschutz/index.html", root), "utf8");
+  const chunkDirectory = new URL("out/_next/static/chunks/", root);
+  const chunkNames = (await readdir(chunkDirectory)).filter((name) => name.endsWith(".js"));
+  const staticChunks = (await Promise.all(chunkNames.map((name) => readFile(new URL(name, chunkDirectory), "utf8")))).join("\n");
+
+  assert.doesNotMatch(homeHtml, /<script[^>]+googletagmanager\.com\/gtag/i);
+  assert.match(privacyHtml, /Google Analytics 4/);
+  assert.match(privacyHtml, /Ohne Ihre Zustimmung wird das Google-Analytics-Skript nicht geladen/);
+  assert.match(privacyHtml, /Datenschutz-Einstellungen/);
+  assert.match(staticChunks, /G-S2VRST528R/);
+  assert.match(staticChunks, /googletagmanager\.com\/gtag\/js/);
 });
