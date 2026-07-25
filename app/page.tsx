@@ -90,7 +90,7 @@ const projects: Project[] = [
   {
     period: "seit 06/2025",
     title: "Schnittstelle für Wertpapierdaten",
-    company: "Thüringer Aufbaubank · Bank- und Finanzwesen",
+    company: "Bank- und Finanzwesen",
     role: "Softwareentwicklung",
     text: "Konzeption der Schnittstellenarchitektur, ABAP/OO-Entwicklung, Berechtigungs- und Netzwerkdesign, RFC-Anbindung sowie Test und Fehleranalyse.",
     result: "Konkreter Beitrag: abgestimmte Schnittstellenarchitektur, technische Anbindung und durchgängiges Testdesign.",
@@ -99,7 +99,7 @@ const projects: Project[] = [
   {
     period: "06/2024 – 03/2025",
     title: "Proof of Concept SAP Ariba",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Systemarchitektur, ABAP/OO, Fiori Apps, Berechtigungen, RFC/SOAP/REST-Schnittstellen und Adobe Forms im Ariba-Umfeld.",
     result: "Konkreter Beitrag: technischer Proof of Concept als belastbare Grundlage für die weitere Architekturentscheidung.",
@@ -108,7 +108,7 @@ const projects: Project[] = [
   {
     period: "07/2023 – 05/2024",
     title: "Einführung SAP S/4HANA",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "ABAP/OO-Entwicklung, Code Conversion, Berechtigungen, Fiori Apps, Train-the-Trainer, Testkonzeption und Stabilisierung.",
     result: "Konkreter Beitrag: konvertierte Eigenentwicklungen, abgesicherte Fiori- und Berechtigungsthemen sowie Wissenstransfer.",
@@ -117,7 +117,7 @@ const projects: Project[] = [
   {
     period: "03/2023 – 09/2023",
     title: "SAP-Berechtigungen",
-    company: "Berliner Verkehrsbetriebe · ÖPNV",
+    company: "Öffentlicher Nahverkehr",
     role: "Berechtigungsentwicklung",
     text: "Konzeption und Entwicklung von Berechtigungen, Benutzeradministration, Trainings, ABAP/OO sowie Test und Fehlerbehebung.",
     result: "Konkreter Beitrag: umgesetzte Berechtigungen, nachvollziehbare Tests und befähigte Administration.",
@@ -126,7 +126,7 @@ const projects: Project[] = [
   {
     period: "01/2023 – 03/2023",
     title: "SAP-Lizenzoptimierung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Administration",
     text: "Einführung von SNOW, Optimierung der Lizenzzuordnungen, Vertragsanalyse und Szenarien für Digital Access sowie S/4-Conversion.",
     result: "Konkreter Beitrag: transparente Lizenzzuordnung und strukturierte Entscheidungsgrundlagen für Optimierungsszenarien.",
@@ -135,7 +135,7 @@ const projects: Project[] = [
   {
     period: "08/2022 – 02/2023",
     title: "Voruntersuchung S/4HANA-Migration",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Entwicklung",
     text: "Business Case On-Premise vs. RISE, ATC Code Check, Maintenance Planner und S/4HANA Readiness Check.",
     tech: ["S/4HANA", "ATC", "FI", "MM / WM / PM"],
@@ -143,7 +143,7 @@ const projects: Project[] = [
   {
     period: "06/2021 – 12/2021",
     title: "Mobile Lagerlogistik in der Instandhaltung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Entwicklung",
     text: "iPad-Anbindung, mobile Oberflächen und Geschäftslogik für Lagerbewegungen und Inventur mit Mobisys und ABAP.",
     tech: ["Mobisys MSD/MSB", "WM", "MM", "iOS"],
@@ -151,7 +151,7 @@ const projects: Project[] = [
   {
     period: "06/2020 – 05/2021",
     title: "Icertis-Vertragsmanagement",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Technische Teilprojektleitung",
     text: "IDoc-to-REST-Integration, ORDERS- und CREMAS-Erweiterungen, LDAP-Anbindung und technische Security-Analyse.",
     tech: ["SAP ERP ECC", "IDoc", "REST", "LDAP"],
@@ -159,7 +159,7 @@ const projects: Project[] = [
   {
     period: "01/2019 – 04/2020",
     title: "Mobile Logistik im Zentrallager",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Entwicklung",
     text: "Anbindung von iPhones an SAP sowie Entwicklung mobiler Oberflächen und Geschäftslogik in Mobisys und ABAP.",
     tech: ["SAP ERP ECC", "Mobisys", "WM", "iOS"],
@@ -167,7 +167,7 @@ const projects: Project[] = [
   {
     period: "06/2018 – 12/2018",
     title: "ERP- und SRM-EHP-Upgrade",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Entwicklung",
     text: "Upgrade, ABAP-Fehlerbereinigung, SPAU/SPAM-Nacharbeiten, Testkoordination und Transportmanagement.",
     tech: ["SAP ERP 6.0", "SRM 7.0", "SPAU / SPAM", "ABAP OO"],
@@ -175,7 +175,7 @@ const projects: Project[] = [
   {
     period: "01/2017 – 11/2017",
     title: "EAI mit Lobster Data",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Projektleitung & Entwicklung",
     text: "RFC- und IDoc-Anbindung, BAPI-Anpassungen, Migration von Seeburger-Profilen und IT-Security-Analyse.",
     tech: ["Lobster Data", "RFC", "IDoc", "ABAP OO"],
@@ -183,7 +183,7 @@ const projects: Project[] = [
   {
     period: "04/2016 – 12/2016",
     title: "Mobile Prozesse Instandhaltung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Mobile Prozesse für Entstörung, Wartung, Schichtbuch und Ersatzteilentnahme inklusive PM-Customizing.",
     tech: ["SAP PM", "MM", "Mobisys", "ABAP OO"],
@@ -191,7 +191,7 @@ const projects: Project[] = [
   {
     period: "07/2015 – 03/2016",
     title: "SAP Treasury Management",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "ABAP-Reports, BAPI/BAdI-Programmierung, automatische Sachkontenfindung, Flatfile-Schnittstellen und TRM-Customizing.",
     tech: ["SAP TRM", "FI", "BAPI / BAdI", "ABAP OO"],
@@ -199,7 +199,7 @@ const projects: Project[] = [
   {
     period: "11/2014 – 06/2015",
     title: "Mobile Lagerhaltung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Handscanner-Anbindung, Mobisys-Oberflächen, ABAP-Geschäftslogik, WM-Customizing und Jobsteuerung.",
     tech: ["SAP WM", "MM", "Mobisys", "ABAP OO"],
@@ -207,7 +207,7 @@ const projects: Project[] = [
   {
     period: "01/2013 – 10/2013",
     title: "Eigenentwicklung Reisekostenabrechnung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Datenmodell, Rechnungseingang per Flatfile, Abrechnungsverbuchung in ABAP OO und Stammdatenmigration mit LSMW.",
     tech: ["SAP FI", "LSMW", "Flatfile", "ABAP OO"],
@@ -215,7 +215,7 @@ const projects: Project[] = [
   {
     period: "01/2012 – 11/2012",
     title: "SAP R/3 EHP-Upgrade",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Softwareentwicklung",
     text: "Upgrade, Fehlerbereinigung im Kundennamensraum, SPAU/SPAM-Nacharbeiten und Transportmanagement.",
     tech: ["SAP ERP", "FI / MM / WM / PM", "SPAU / SPAM", "ABAP OO"],
@@ -223,7 +223,7 @@ const projects: Project[] = [
   {
     period: "04/2011 – 09/2011",
     title: "Upgrade Kreditorenbuchhaltung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Technisches SAP Consulting",
     text: "Upgrade von AFI DirectInvoiceControl, Rechnungsprüfungslogik, SAPscript und Genehmigungsworkflow.",
     tech: ["SAP FI-AP", "AFI DIC", "SAPscript", "Workflow"],
@@ -231,7 +231,7 @@ const projects: Project[] = [
   {
     period: "10/2010 – 03/2011",
     title: "Zentrale Benutzerverwaltung",
-    company: "DATEV eG · Informationstechnologie",
+    company: "Informationstechnologie",
     role: "Technisches SAP Consulting",
     text: "Konzeption und Customizing der CUA, ABAP-Reports, Systemanbindung und Training der Benutzeradministration.",
     tech: ["SAP ERP", "SAP SRM", "Solution Manager", "CUA"],

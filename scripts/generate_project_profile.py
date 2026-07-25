@@ -50,24 +50,24 @@ styles.add(ParagraphStyle(name="FactTitle", fontName="Arial-Bold", fontSize=12, 
 styles.add(ParagraphStyle(name="FactSmall", fontName="Arial", fontSize=7.8, leading=10.5, textColor=colors.HexColor("#BCEBF0")))
 
 projects = [
-    ("seit 06/2025", "Schnittstelle für Wertpapierdaten", "Thüringer Aufbaubank", "SAP ECC · REST · RFC · ABAP OO"),
-    ("06/2024 - 03/2025", "Proof of Concept SAP Ariba", "DATEV eG", "SAP Ariba · S/4HANA · Fiori · Integration Suite"),
-    ("07/2023 - 05/2024", "Einführung SAP S/4HANA", "DATEV eG", "ABAP OO · Code Conversion · Fiori · Berechtigungen"),
-    ("03/2023 - 09/2023", "SAP-Berechtigungen", "Berliner Verkehrsbetriebe", "SAP ERP ECC · PTNova · ABAP OO"),
-    ("01/2023 - 03/2023", "SAP-Lizenzoptimierung", "DATEV eG", "SNOW · Digital Access · S/4HANA"),
-    ("08/2022 - 02/2023", "Voruntersuchung S/4HANA-Migration", "DATEV eG", "S/4HANA · ATC · Readiness Check"),
-    ("06/2021 - 12/2021", "Mobile Lagerlogistik in der Instandhaltung", "DATEV eG", "Mobisys · WM · MM · iOS"),
-    ("06/2020 - 05/2021", "Icertis-Vertragsmanagement", "DATEV eG", "IDoc · REST · LDAP · ABAP OO"),
-    ("01/2019 - 04/2020", "Mobile Logistik im Zentrallager", "DATEV eG", "Mobisys · WM · iOS · ABAP OO"),
-    ("06/2018 - 12/2018", "ERP- und SRM-EHP-Upgrade", "DATEV eG", "SAP ERP · SRM · SPAU/SPAM"),
-    ("01/2017 - 11/2017", "EAI mit Lobster Data", "DATEV eG", "Lobster Data · RFC · IDoc · ABAP OO"),
-    ("04/2016 - 12/2016", "Mobile Prozesse Instandhaltung", "DATEV eG", "SAP PM · MM · Mobisys · ABAP OO"),
-    ("07/2015 - 03/2016", "SAP Treasury Management", "DATEV eG", "SAP TRM · FI · BAPI/BAdI"),
-    ("11/2014 - 06/2015", "Mobile Lagerhaltung", "DATEV eG", "SAP WM · MM · Mobisys"),
-    ("01/2013 - 10/2013", "Eigenentwicklung Reisekostenabrechnung", "DATEV eG", "SAP FI · LSMW · Flatfile · ABAP OO"),
-    ("01/2012 - 11/2012", "SAP R/3 EHP-Upgrade", "DATEV eG", "SAP ERP · SPAU/SPAM · ABAP OO"),
-    ("04/2011 - 09/2011", "Upgrade Kreditorenbuchhaltung", "DATEV eG", "SAP FI-AP · AFI DIC · Workflow"),
-    ("10/2010 - 03/2011", "Zentrale Benutzerverwaltung", "DATEV eG", "SAP ERP · SRM · Solution Manager · CUA"),
+    ("seit 06/2025", "Schnittstelle für Wertpapierdaten", "Bank- und Finanzwesen", "SAP ECC · REST · RFC · ABAP OO"),
+    ("06/2024 - 03/2025", "Proof of Concept SAP Ariba", "Informationstechnologie", "SAP Ariba · S/4HANA · Fiori · Integration Suite"),
+    ("07/2023 - 05/2024", "Einführung SAP S/4HANA", "Informationstechnologie", "ABAP OO · Code Conversion · Fiori · Berechtigungen"),
+    ("03/2023 - 09/2023", "SAP-Berechtigungen", "Öffentlicher Nahverkehr", "SAP ERP ECC · PTNova · ABAP OO"),
+    ("01/2023 - 03/2023", "SAP-Lizenzoptimierung", "Informationstechnologie", "SNOW · Digital Access · S/4HANA"),
+    ("08/2022 - 02/2023", "Voruntersuchung S/4HANA-Migration", "Informationstechnologie", "S/4HANA · ATC · Readiness Check"),
+    ("06/2021 - 12/2021", "Mobile Lagerlogistik in der Instandhaltung", "Informationstechnologie", "Mobisys · WM · MM · iOS"),
+    ("06/2020 - 05/2021", "Icertis-Vertragsmanagement", "Informationstechnologie", "IDoc · REST · LDAP · ABAP OO"),
+    ("01/2019 - 04/2020", "Mobile Logistik im Zentrallager", "Informationstechnologie", "Mobisys · WM · iOS · ABAP OO"),
+    ("06/2018 - 12/2018", "ERP- und SRM-EHP-Upgrade", "Informationstechnologie", "SAP ERP · SRM · SPAU/SPAM"),
+    ("01/2017 - 11/2017", "EAI mit Lobster Data", "Informationstechnologie", "Lobster Data · RFC · IDoc · ABAP OO"),
+    ("04/2016 - 12/2016", "Mobile Prozesse Instandhaltung", "Informationstechnologie", "SAP PM · MM · Mobisys · ABAP OO"),
+    ("07/2015 - 03/2016", "SAP Treasury Management", "Informationstechnologie", "SAP TRM · FI · BAPI/BAdI"),
+    ("11/2014 - 06/2015", "Mobile Lagerhaltung", "Informationstechnologie", "SAP WM · MM · Mobisys"),
+    ("01/2013 - 10/2013", "Eigenentwicklung Reisekostenabrechnung", "Informationstechnologie", "SAP FI · LSMW · Flatfile · ABAP OO"),
+    ("01/2012 - 11/2012", "SAP R/3 EHP-Upgrade", "Informationstechnologie", "SAP ERP · SPAU/SPAM · ABAP OO"),
+    ("04/2011 - 09/2011", "Upgrade Kreditorenbuchhaltung", "Informationstechnologie", "SAP FI-AP · AFI DIC · Workflow"),
+    ("10/2010 - 03/2011", "Zentrale Benutzerverwaltung", "Informationstechnologie", "SAP ERP · SRM · Solution Manager · CUA"),
 ]
 
 
@@ -195,21 +195,21 @@ def build():
     story.append(Paragraph("Drei Beispiele aus dem aktuellen Projektprofil. Die Darstellung bleibt bewusst faktenbasiert und verzichtet auf nicht belegte Kennzahlen.", styles["ProfileBody"]))
     story.append(Spacer(1, 5 * mm))
     story.append(case_card(
-        "Seit 06/2025 · Thüringer Aufbaubank",
+        "Seit 06/2025 · Bank- und Finanzwesen",
         "Schnittstelle für Wertpapierdaten",
         "Schnittstellenarchitektur, ABAP-OO-Entwicklung, Berechtigungs- und Netzwerkdesign, RFC-Anbindung, Tests und Fehleranalyse.",
         "Abgestimmte Architektur, technische Anbindung und durchgängiges Testdesign.",
     ))
     story.append(Spacer(1, 6 * mm))
     story.append(case_card(
-        "06/2024 - 03/2025 · DATEV eG",
+        "06/2024 - 03/2025 · Informationstechnologie",
         "Proof of Concept SAP Ariba",
         "Systemarchitektur, ABAP OO, Fiori Apps, Berechtigungen, RFC/SOAP/REST-Schnittstellen und Adobe Forms.",
         "Technischer Proof of Concept als Grundlage für die weitere Architekturentscheidung.",
     ))
     story.append(Spacer(1, 6 * mm))
     story.append(case_card(
-        "07/2023 - 05/2024 · DATEV eG",
+        "07/2023 - 05/2024 · Informationstechnologie",
         "Einführung SAP S/4HANA",
         "ABAP-OO-Entwicklung, Code Conversion, Berechtigungen, Fiori Apps, Train-the-Trainer, Testkonzeption und Stabilisierung.",
         "Konvertierte Eigenentwicklungen, abgesicherte Fiori- und Berechtigungsthemen sowie Wissenstransfer.",

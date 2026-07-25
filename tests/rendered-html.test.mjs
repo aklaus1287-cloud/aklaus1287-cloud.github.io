@@ -88,6 +88,25 @@ test("ships consent-first Google Analytics and updated privacy information", asy
   assert.doesNotMatch(staticChunks, /mailto:info@sapberatungandreasklaus\.de\?subject/);
 });
 
+test("anonymizes former customers across the website and project profile source", async () => {
+  const files = [
+    "out/index.html",
+    "out/projekte/index.html",
+    "out/projekte/wertpapierdaten-schnittstelle/index.html",
+    "out/projekte/sap-ariba-proof-of-concept/index.html",
+    "out/projekte/s4hana-einfuehrung/index.html",
+    "scripts/generate_project_profile.py",
+  ];
+  const publishedContent = (
+    await Promise.all(files.map((file) => readFile(new URL(file, root), "utf8")))
+  ).join("\n");
+
+  assert.doesNotMatch(publishedContent, /(?:eG|GmbH|AG)\s*(?:·|-)\s*Informationstechnologie/i);
+  assert.match(publishedContent, /Bank- und Finanzwesen/);
+  assert.match(publishedContent, /Informationstechnologie/);
+  assert.match(publishedContent, /(?:Ö|Ã–)ffentlicher Nahverkehr/);
+});
+
 test("publishes the full project archive and factual case studies", async () => {
   const projectsHtml = await readFile(new URL("out/projekte/index.html", root), "utf8");
   const caseHtml = await readFile(new URL("out/projekte/wertpapierdaten-schnittstelle/index.html", root), "utf8");
