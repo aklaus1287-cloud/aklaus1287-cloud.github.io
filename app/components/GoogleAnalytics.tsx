@@ -108,7 +108,7 @@ export default function GoogleAnalytics() {
   return (
     <>
       {showBanner ? (
-        <section className="consent-banner" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+        <section className="consent-banner" role="region" aria-labelledby="consent-title">
           <div>
             <p className="consent-kicker">Datenschutz-Einstellungen</p>
             <h2 id="consent-title">Dürfen wir die Nutzung dieser Website messen?</h2>

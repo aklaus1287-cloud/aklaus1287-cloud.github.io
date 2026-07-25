@@ -32,8 +32,10 @@ export default function Datenschutz() {
       <p>Ihre Auswahl wird lokal in Ihrem Browser gespeichert. Sie können Ihre Einwilligung jederzeit über die Schaltfläche „Datenschutz-Einstellungen“ widerrufen. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
 
       <h2>4. Kontaktaufnahme und Anfrageformular</h2>
-      <p>Das Anfrageformular überträgt oder speichert keine Eingaben auf dieser Website. Beim Absenden wird aus den eingegebenen Angaben lediglich eine E-Mail in Ihrem lokalen E-Mail-Programm vorbereitet. Erst wenn Sie diese E-Mail selbst versenden, erreichen die Angaben den Verantwortlichen.</p>
-      <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, verarbeiten wir die von Ihnen übermittelten Angaben zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen oder vertraglichen Anfragen und im Übrigen Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <p>Wenn Sie das Anfrageformular verwenden, werden Name, Unternehmen (optional), E-Mail-Adresse, gewähltes SAP-Thema und Nachricht an ein von uns eingerichtetes Google-Formular übertragen. Die Antworten werden im geschäftlichen Google-Konto des Verantwortlichen gespeichert. Die Website selbst führt keine eigene Datenbank mit Formulareingaben.</p>
+      <p>Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Eine Verarbeitung durch Google in den USA ist möglich. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen finden Sie in den <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Datenschutzhinweisen von Google</a>.</p>
+      <p>Die Angaben werden ausschließlich zur Bearbeitung und Beantwortung Ihrer Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen oder vertraglichen Anfragen und im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, wenn die Anfrage abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+      <p>Alternativ können Sie ohne Nutzung des Formulars direkt per E-Mail oder Telefon Kontakt aufnehmen.</p>
 
       <h2>5. Externe Links</h2>
       <p>Die Website enthält normale Links zu externen Angeboten, etwa LinkedIn. Erst wenn Sie einen solchen Link aufrufen, werden Daten an den jeweiligen Anbieter übertragen. Für die Verarbeitung auf der Zielseite ist deren Betreiber verantwortlich.</p>

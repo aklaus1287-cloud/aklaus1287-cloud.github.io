@@ -13,7 +13,6 @@ test("exports the complete consulting website", async () => {
   assert.match(html, /SAP-Thema besprechen/);
   assert.match(html, /Projektliste aus dem Lebenslauf/);
   assert.match(html, /Schnittstelle für Wertpapierdaten/);
-  assert.match(html, /Zentrale Benutzerverwaltung/);
   assert.match(html, /18 Projekte/);
   assert.match(html, /info@sapberatungandreasklaus\.de/);
   assert.match(html, /\+49152 36936743/);
@@ -22,9 +21,12 @@ test("exports the complete consulting website", async () => {
   assert.match(html, /andreas-klaus-800\.webp/);
   assert.match(html, /andreas-klaus-480\.avif/);
   assert.match(html, /Andreas Klaus, SAP-Berater aus Nürnberg/);
-  assert.match(html, /Anfrage als E-Mail vorbereiten/);
+  assert.match(html, /Anfrage sicher senden/);
   assert.match(html, /SAP Personalvermittlung/);
-  assert.match(html, /Weitere 13 SAP-Projekte anzeigen/);
+  assert.match(html, /Alle 18 Projekte &amp; Fallstudien/);
+  assert.match(html, /SAP-Fachkraft finden/);
+  assert.match(html, /Projektprofil-Andreas-Klaus\.pdf/);
+  assert.doesNotMatch(html, /Weitere 13 SAP-Projekte anzeigen/);
   assert.doesNotMatch(html, /SAP-Technik für Mittelstand und öffentliche Unternehmen|Freelance|freiberuf/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
@@ -44,6 +46,12 @@ test("exports SEO routes, legal pages, service pages and social preview", async 
     access(new URL("out/leistungen/sap-berechtigungen/index.html", root)),
     access(new URL("out/leistungen/technische-sap-beratung/index.html", root)),
     access(new URL("out/leistungen/sap-personalvermittlung/index.html", root)),
+    access(new URL("out/projekte/index.html", root)),
+    access(new URL("out/projekte/wertpapierdaten-schnittstelle/index.html", root)),
+    access(new URL("out/projekte/sap-ariba-proof-of-concept/index.html", root)),
+    access(new URL("out/projekte/s4hana-einfuehrung/index.html", root)),
+    access(new URL("out/danke/index.html", root)),
+    access(new URL("out/Projektprofil-Andreas-Klaus.pdf", root)),
     access(new URL("out/willkommen/impressum/index.html", root)),
   ]);
 });
@@ -58,6 +66,7 @@ test("publishes indexable service copy and legacy canonical redirects", async ()
   assert.match(redirectHtml, /url=\/impressum\//);
   assert.match(redirectHtml, /noindex/);
   assert.match(sitemap, /leistungen\/s4hana-beratung/);
+  assert.match(sitemap, /projekte\/wertpapierdaten-schnittstelle/);
 });
 
 test("ships consent-first Google Analytics and updated privacy information", async () => {
@@ -71,6 +80,22 @@ test("ships consent-first Google Analytics and updated privacy information", asy
   assert.match(privacyHtml, /Google Analytics 4/);
   assert.match(privacyHtml, /Ohne Ihre Zustimmung wird das Google-Analytics-Skript nicht geladen/);
   assert.match(privacyHtml, /Datenschutz-Einstellungen/);
+  assert.match(privacyHtml, /Google-Formular/);
+  assert.match(staticChunks, /docs\.google\.com\/forms\/u\/0\/d\/e\/1FAIpQLSfVsVbb_Jfld1XVFe43jhpuW_ZUPhfLZRpVqi0gGgpfSBTX7Q\/formResponse/);
   assert.match(staticChunks, /G-S2VRST528R/);
   assert.match(staticChunks, /googletagmanager\.com\/gtag\/js/);
+  assert.match(staticChunks, /generate_lead/);
+  assert.doesNotMatch(staticChunks, /mailto:info@sapberatungandreasklaus\.de\?subject/);
+});
+
+test("publishes the full project archive and factual case studies", async () => {
+  const projectsHtml = await readFile(new URL("out/projekte/index.html", root), "utf8");
+  const caseHtml = await readFile(new URL("out/projekte/wertpapierdaten-schnittstelle/index.html", root), "utf8");
+
+  assert.match(projectsHtml, /Zentrale Benutzerverwaltung/);
+  assert.match(projectsHtml, /Ausgewählte Fallstudien/);
+  assert.match(projectsHtml, /Projektprofil als PDF/);
+  assert.match(caseHtml, /Ausgangslage/);
+  assert.match(caseHtml, /Technischer Beitrag/);
+  assert.match(caseHtml, /durchgängiges Testdesign/);
 });

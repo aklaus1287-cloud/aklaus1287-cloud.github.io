@@ -261,7 +261,6 @@ const faqs = [
 ];
 
 const featuredProjects = projects.slice(0, 5);
-const earlierProjects = projects.slice(5);
 
 const faqStructuredData = {
   "@context": "https://schema.org",
@@ -286,7 +285,8 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a>
           <a href="#kompetenzen">Kompetenzen</a>
-          <a href="#projekte">Projekte</a>
+          <Link href="/projekte/">Projekte</Link>
+          <Link href="/leistungen/sap-personalvermittlung/">Personalvermittlung</Link>
           <a href="#ueber-mich">Über mich</a>
           <a className="nav-cta" href="#kontakt">Kontakt</a>
         </nav>
@@ -296,7 +296,8 @@ export default function Home() {
           <nav aria-label="Mobile Navigation">
             <a href="#leistungen">Leistungen</a>
             <a href="#kompetenzen">Kompetenzen</a>
-            <a href="#projekte">Projekte</a>
+            <Link href="/projekte/">Projekte</Link>
+            <Link href="/leistungen/sap-personalvermittlung/">Personalvermittlung</Link>
             <a href="#ueber-mich">Über mich</a>
             <a href="#kontakt">Kontakt</a>
           </nav>
@@ -339,7 +340,9 @@ export default function Home() {
                 <a className="button button-primary" href="#kontakt" data-conversion="hero_primary">
                   SAP-Thema besprechen <span aria-hidden="true">↗</span>
                 </a>
-                <a className="text-link" href="#projekte">Projekterfahrung <span aria-hidden="true">↓</span></a>
+                <Link className="text-link" href="/leistungen/sap-personalvermittlung/" data-conversion="hero_personalvermittlung">
+                  SAP-Fachkraft finden <span aria-hidden="true">↗</span>
+                </Link>
               </div>
               <div className="trust-row" aria-label="Erfahrung und Profil">
                 <div><strong>15+ Jahre</strong><span>SAP-Berufserfahrung</span></div>
@@ -355,6 +358,21 @@ export default function Home() {
           <span>SAP S/4HANA</span><span>ABAP / ABAP OO</span><span>SAP Fiori</span><span>REST · SOAP · RFC · IDoc</span><span>Berechtigungen</span><span>SAP Personalvermittlung</span>
         </section>
 
+        <section className="offer-paths" aria-label="Zwei Wege der Zusammenarbeit">
+          <article>
+            <span>01 · Technische SAP-Beratung</span>
+            <h2>Technik, die im Betrieb trägt.</h2>
+            <p>Konzeption, Entwicklung, Integration und Stabilisierung – direkt mit dem technischen Ansprechpartner.</p>
+            <a href="#leistungen" data-conversion="path_consulting">Leistungen ansehen <i aria-hidden="true">↗</i></a>
+          </article>
+          <article className="offer-path-personnel">
+            <span>02 · SAP Personalvermittlung</span>
+            <h2>Passende SAP-Fachkräfte finden.</h2>
+            <p>Fachlich eingeordnete SAP-Consultants und Entwickler für Festanstellung oder konkrete Projektbesetzung.</p>
+            <Link href="/leistungen/sap-personalvermittlung/" data-conversion="path_personalvermittlung">Personalbedarf besprechen <i aria-hidden="true">↗</i></Link>
+          </article>
+        </section>
+
         <section className="section services" id="leistungen">
           <div className="section-intro">
             <div><p className="eyebrow"><span></span>Leistungen</p><h2>Technische Tiefe trifft <em>pragmatische Umsetzung.</em></h2></div>
@@ -362,12 +380,12 @@ export default function Home() {
           </div>
           <div className="service-grid">
             {services.map((service) => (
-              <article className="service-card" key={service.number}>
+              <article className={`service-card${service.number === "07" ? " service-card-personnel" : ""}`} key={service.number}>
                 <span className="card-number">{service.number}</span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
                 <ul aria-label={`Schwerpunkte ${service.title}`}>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-                <Link className="service-link" href={service.href}>Leistung im Detail <span aria-hidden="true">↗</span></Link>
+                <Link className="service-link" href={service.href} data-conversion={`service_${service.number}`}>Leistung im Detail <span aria-hidden="true">↗</span></Link>
               </article>
             ))}
           </div>
@@ -394,7 +412,7 @@ export default function Home() {
         <section className="section projects" id="projekte">
           <div className="section-intro project-intro">
             <div><p className="eyebrow"><span></span>Projektliste aus dem Lebenslauf</p><h2>Erfahrung, die sich an <em>konkreten Projekten</em> zeigt.</h2></div>
-            <p>Zunächst sehen Sie fünf besonders relevante Projekte. Die vollständige Liste mit 18 Stationen aus dem Lebenslauf bleibt direkt darunter zugänglich.</p>
+            <p>Fünf ausgewählte Projekte im Überblick. Die vollständige Liste mit 18 Stationen, drei Fallstudien und ein Projektprofil als PDF stehen auf der Projektseite bereit.</p>
           </div>
           <div className="project-list featured-projects">
             {featuredProjects.map((project, index) => (
@@ -411,23 +429,10 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <details className="project-archive">
-            <summary><span>Vollständiger Lebenslauf</span>Weitere 13 SAP-Projekte anzeigen <i aria-hidden="true">+</i></summary>
-            <div className="project-list">
-              {earlierProjects.map((project, index) => (
-                <article className="project-card" key={`${project.period}-${project.title}`}>
-                  <div className="project-index">{String(index + 6).padStart(2, "0")}</div>
-                  <div className="project-main">
-                    <div className="project-meta"><span>{project.period}</span><span>{project.role}</span></div>
-                    <h3>{project.title}</h3>
-                    <p className="project-company">{project.company}</p>
-                    <p>{project.text}</p>
-                    <ul aria-label={`Technologien ${project.title}`}>{project.tech.map((item) => <li key={item}>{item}</li>)}</ul>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </details>
+          <div className="project-actions">
+            <Link className="button button-primary" href="/projekte/" data-conversion="home_all_projects">Alle 18 Projekte & Fallstudien <span aria-hidden="true">↗</span></Link>
+            <a className="text-link" href="/Projektprofil-Andreas-Klaus.pdf" download data-conversion="home_project_pdf">Projektprofil als PDF <span aria-hidden="true">↓</span></a>
+          </div>
         </section>
 
         <section className="section process" id="arbeitsweise">
@@ -435,7 +440,7 @@ export default function Home() {
             <p className="eyebrow"><span></span>Zusammenarbeit</p>
             <h2>Klarer Prozess.<br/><em>Kurze Wege.</em></h2>
             <p>Sie sprechen vom ersten Termin bis zur Übergabe direkt mit demjenigen, der die technische Arbeit verantwortet.</p>
-            <a className="text-link" href="#kontakt">Erstgespräch vereinbaren <span aria-hidden="true">↘</span></a>
+            <a className="text-link" href="#kontakt" data-conversion="process_contact">Unverbindliches Erstgespräch <span aria-hidden="true">↘</span></a>
           </div>
           <ol className="process-grid">
             {steps.map((step) => (

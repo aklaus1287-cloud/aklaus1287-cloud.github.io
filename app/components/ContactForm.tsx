@@ -3,54 +3,79 @@
 import { FormEvent, useState } from "react";
 
 export default function ContactForm() {
-  const [prepared, setPrepared] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const name = String(form.get("name") || "").trim();
-    const company = String(form.get("company") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const topic = String(form.get("topic") || "Allgemeine SAP-Anfrage");
-    const message = String(form.get("message") || "").trim();
-    const subject = `SAP-Projektanfrage: ${topic}`;
-    const body = [
-      `Name: ${name}`,
-      company ? `Unternehmen: ${company}` : "",
-      `E-Mail: ${email}`,
-      `Thema: ${topic}`,
-      "",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
+    const topic = String(form.get("entry.248579673") || "Allgemeine SAP-Anfrage");
+    const honeypot = String(form.get("website") || "").trim();
+
+    if (honeypot) {
+      window.location.assign("/danke/");
+      return;
+    }
 
     window.dispatchEvent(
       new CustomEvent("site:conversion", { detail: { action: "contact_form", topic } }),
     );
-    setPrepared(true);
-    window.location.href = `mailto:info@sapberatungandreasklaus.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitting(true);
+
+    let submitted = false;
+    const submitForm = () => {
+      if (submitted) return;
+      submitted = true;
+      setSubmitted(true);
+      formElement.submit();
+    };
+
+    if (window.gtag) {
+      window.gtag("event", "generate_lead", {
+        lead_source: "website_contact_form",
+        topic,
+        event_callback: submitForm,
+        event_timeout: 900,
+      });
+      window.setTimeout(submitForm, 1000);
+    } else {
+      submitForm();
+    }
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <>
+    <form
+      className="contact-form"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfVsVbb_Jfld1XVFe43jhpuW_ZUPhfLZRpVqi0gGgpfSBTX7Q/formResponse"
+      method="post"
+      target="contact-response-frame"
+      onSubmit={handleSubmit}
+    >
+      <div className="form-honeypot" aria-hidden="true">
+        <label>
+          <span>Website</span>
+          <input name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <div className="form-row">
         <label>
           <span>Name *</span>
-          <input name="name" autoComplete="name" required />
+          <input name="entry.1527301573" autoComplete="name" required />
         </label>
         <label>
           <span>Unternehmen</span>
-          <input name="company" autoComplete="organization" />
+          <input name="entry.1982177526" autoComplete="organization" />
         </label>
       </div>
       <label>
         <span>E-Mail *</span>
-        <input name="email" type="email" autoComplete="email" required />
+        <input name="entry.909632839" type="email" autoComplete="email" required />
       </label>
       <label>
         <span>SAP-Thema</span>
-        <select name="topic" defaultValue="ABAP & Fiori">
+        <select name="entry.248579673" defaultValue="ABAP & Fiori">
           <option>ABAP & Fiori</option>
           <option>Schnittstellen & Integration</option>
           <option>S/4HANA</option>
@@ -62,15 +87,28 @@ export default function ContactForm() {
       </label>
       <label>
         <span>Worum geht es? *</span>
-        <textarea name="message" rows={5} required />
+        <textarea name="entry.1068684333" rows={5} minLength={10} maxLength={5000} required />
       </label>
-      <button className="button button-form" type="submit">
-        Anfrage als E-Mail vorbereiten <span aria-hidden="true">↗</span>
+      <label className="privacy-check">
+        <input type="checkbox" required />
+        <span>Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzhinweise</a> zur Bearbeitung meiner Anfrage gelesen. *</span>
+      </label>
+      <button className="button button-form" type="submit" disabled={submitting}>
+        {submitting ? "Anfrage wird gesendet …" : "Anfrage sicher senden"} <span aria-hidden="true">↗</span>
       </button>
       <p className="form-privacy">
-        Das Formular öffnet Ihr E-Mail-Programm. Eingaben werden auf dieser Website weder gespeichert noch übertragen.
+        Ihre Angaben werden ausschließlich zur Bearbeitung der Anfrage per E-Mail an Andreas Klaus übermittelt.
       </p>
-      {prepared && <p className="form-status" role="status">Die Anfrage wurde für Ihr E-Mail-Programm vorbereitet.</p>}
+      {submitting && <p className="form-status" role="status">Einen Moment – die Anfrage wird übertragen.</p>}
     </form>
+    <iframe
+      className="form-response-frame"
+      name="contact-response-frame"
+      title="Übermittlung der Kontaktanfrage"
+      onLoad={() => {
+        if (submitted) window.location.assign("/danke/");
+      }}
+    />
+    </>
   );
 }

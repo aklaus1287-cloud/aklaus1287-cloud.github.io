@@ -29,6 +29,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const service = getServicePage(slug);
   if (!service) notFound();
+  const isPersonnel = service.slug === "sap-personalvermittlung";
+  const primaryCta = isPersonnel ? "SAP-Profil anfragen" : "Projekt besprechen";
+  const footerCta = isPersonnel ? "Personalbedarf anfragen" : "SAP-Thema anfragen";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -68,7 +71,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <p>{service.intro}</p>
             <div className="hero-actions">
               <Link className="button button-primary" href="/#kontakt" data-conversion={`service_${service.slug}`}>
-                Projekt besprechen <span aria-hidden="true">↗</span>
+                {primaryCta} <span aria-hidden="true">↗</span>
               </Link>
               <Link className="text-link" href="/#projekte">Projekte ansehen <span aria-hidden="true">↓</span></Link>
             </div>
@@ -105,9 +108,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
         <section className="service-cta">
           <p className="eyebrow eyebrow-light"><span></span>Direkter Austausch</p>
-          <h2>Passt die Leistung zu Ihrer Aufgabe?</h2>
-          <p>Beschreiben Sie kurz den Systemkontext und das gewünschte Ergebnis. Andreas Klaus meldet sich persönlich bei Ihnen.</p>
-          <Link className="button button-light" href="/#kontakt" data-conversion={`service_footer_${service.slug}`}>SAP-Thema anfragen <span aria-hidden="true">↗</span></Link>
+          <h2>{isPersonnel ? "Welches SAP-Profil suchen Sie?" : "Passt die Leistung zu Ihrer Aufgabe?"}</h2>
+          <p>{isPersonnel ? "Beschreiben Sie kurz Rolle, fachlichen Schwerpunkt, Startzeitpunkt und Einsatzmodell. Andreas Klaus meldet sich persönlich bei Ihnen." : "Beschreiben Sie kurz den Systemkontext und das gewünschte Ergebnis. Andreas Klaus meldet sich persönlich bei Ihnen."}</p>
+          <Link className="button button-light" href="/#kontakt" data-conversion={`service_footer_${service.slug}`}>{footerCta} <span aria-hidden="true">↗</span></Link>
         </section>
       </main>
 
