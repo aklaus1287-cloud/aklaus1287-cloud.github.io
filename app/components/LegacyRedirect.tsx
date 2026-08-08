@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 type LegacyRedirectProps = {
   destination: string;
@@ -6,11 +9,17 @@ type LegacyRedirectProps = {
 };
 
 export default function LegacyRedirect({ destination, label }: LegacyRedirectProps) {
-  const script = `window.location.replace(${JSON.stringify(destination)});`;
+  if (!destination.startsWith("/") || destination.startsWith("//")) {
+    throw new Error("Legacy redirects must stay on this website.");
+  }
+
+  useEffect(() => {
+    window.location.replace(destination);
+  }, [destination]);
+
   return (
     <main className="legal-page legacy-redirect">
       <meta httpEquiv="refresh" content={`0;url=${destination}`} />
-      <script dangerouslySetInnerHTML={{ __html: script }} />
       <p className="eyebrow"><span></span>Weiterleitung</p>
       <h1>Diese Seite ist umgezogen.</h1>
       <p>Sie werden automatisch zu „{label}“ weitergeleitet.</p>

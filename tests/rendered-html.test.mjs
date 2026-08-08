@@ -59,12 +59,15 @@ test("exports SEO routes, legal pages, service pages and social preview", async 
 test("publishes indexable service copy and legacy canonical redirects", async () => {
   const serviceHtml = await readFile(new URL("out/leistungen/sap-schnittstellen/index.html", root), "utf8");
   const redirectHtml = await readFile(new URL("out/willkommen/impressum/index.html", root), "utf8");
+  const redirectSource = await readFile(new URL("app/components/LegacyRedirect.tsx", root), "utf8");
   const sitemap = await readFile(new URL("out/sitemap.xml", root), "utf8");
 
   assert.match(serviceHtml, /SAP-Schnittstellen und Integration/);
   assert.match(serviceHtml, /application\/ld\+json/);
   assert.match(redirectHtml, /url=\/impressum\//);
   assert.match(redirectHtml, /noindex/);
+  assert.match(redirectSource, /window\.location\.replace\(destination\)/);
+  assert.doesNotMatch(redirectSource, /dangerouslySetInnerHTML/);
   assert.match(sitemap, /leistungen\/s4hana-beratung/);
   assert.match(sitemap, /projekte\/wertpapierdaten-schnittstelle/);
 });
