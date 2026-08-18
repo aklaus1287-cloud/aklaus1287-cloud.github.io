@@ -17,7 +17,7 @@ export default function Datenschutz() {
         SAP Beratung Andreas Klaus<br />
         Buttendorfer Str. 49, 90431 Nürnberg<br />
         E-Mail: <a href="mailto:info@sapberatungandreasklaus.de">info@sapberatungandreasklaus.de</a><br />
-        Telefon: <a href="tel:+4915236936743">+49152 36936743</a>
+        Telefon: <a href="tel:+4915679822236">+49 15679 822236</a>
       </p>
 
       <h2>2. Bereitstellung der Website</h2>

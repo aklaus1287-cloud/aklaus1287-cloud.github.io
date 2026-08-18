@@ -326,7 +326,7 @@ export default function Home() {
               </div>
               <div className="hero-contact" aria-label="Kontaktdaten">
                 <a href="mailto:info@sapberatungandreasklaus.de" data-conversion="hero_email"><span>E-Mail</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
-                <a href="tel:+4915236936743" data-conversion="hero_phone"><span>Telefon</span><strong>+49152 36936743</strong><i aria-hidden="true">↗</i></a>
+                <a href="tel:+4915679822236" data-conversion="hero_phone"><span>Telefon</span><strong>+49 15679 822236</strong><i aria-hidden="true">↗</i></a>
                 <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer" data-conversion="hero_linkedin"><span>LinkedIn</span><strong>Profil ansehen</strong><i aria-hidden="true">↗</i></a>
               </div>
             </aside>
@@ -483,7 +483,7 @@ export default function Home() {
             <p>Beschreiben Sie kurz System, Aufgabe und gewünschtes Ergebnis. Ich melde mich persönlich und zeitnah mit einer ersten Einordnung.</p>
             <div className="contact-actions">
               <a href="mailto:info@sapberatungandreasklaus.de?subject=SAP-Projektanfrage" data-conversion="contact_email"><span>E-Mail schreiben</span><strong>info@sapberatungandreasklaus.de</strong><i aria-hidden="true">↗</i></a>
-              <a href="tel:+4915236936743" data-conversion="contact_phone"><span>Direkt anrufen</span><strong>+49152 36936743</strong><i aria-hidden="true">↗</i></a>
+              <a href="tel:+4915679822236" data-conversion="contact_phone"><span>Direkt anrufen</span><strong>+49 15679 822236</strong><i aria-hidden="true">↗</i></a>
               <a href="https://www.linkedin.com/in/andreas-klaus-684b2220/" target="_blank" rel="noreferrer" data-conversion="contact_linkedin"><span>Auf LinkedIn vernetzen</span><strong>Andreas Klaus</strong><i aria-hidden="true">↗</i></a>
             </div>
           </div>

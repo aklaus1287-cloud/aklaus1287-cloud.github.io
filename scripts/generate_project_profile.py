@@ -187,7 +187,7 @@ def build():
     story.append(fact_table)
     story.append(Spacer(1, 9 * mm))
     story.append(Paragraph("Direkter Kontakt", styles["ProfileH2"]))
-    story.append(Paragraph("info@sapberatungandreasklaus.de · +49 152 36936743 · linkedin.com/in/andreas-klaus-684b2220", styles["ProfileBody"]))
+    story.append(Paragraph("info@sapberatungandreasklaus.de · +49 15679 822236 · linkedin.com/in/andreas-klaus-684b2220", styles["ProfileBody"]))
     story.append(PageBreak())
 
     story.append(Paragraph("AUSGEWÄHLTE FALLSTUDIEN", styles["ProfileLabel"]))

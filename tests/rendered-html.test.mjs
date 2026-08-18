@@ -15,8 +15,8 @@ test("exports the complete consulting website", async () => {
   assert.match(html, /Schnittstelle für Wertpapierdaten/);
   assert.match(html, /18 Projekte/);
   assert.match(html, /info@sapberatungandreasklaus\.de/);
-  assert.match(html, /\+49152 36936743/);
-  assert.match(html, /tel:\+4915236936743/);
+  assert.match(html, /\+49 15679 822236/);
+  assert.match(html, /tel:\+4915679822236/);
   assert.doesNotMatch(html, /35804909|3580 4909/);
   assert.match(html, /andreas-klaus-800\.webp/);
   assert.match(html, /andreas-klaus-480\.avif/);

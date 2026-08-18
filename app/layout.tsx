@@ -36,7 +36,7 @@ const organizationData = {
   name: "SAP Beratung Andreas Klaus",
   url: "https://www.sapberatungandreasklaus.de",
   email: "info@sapberatungandreasklaus.de",
-  telephone: "+49 152 36936743",
+  telephone: "+49 15679 822236",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Buttendorfer Str. 49",
