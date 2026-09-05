@@ -14,7 +14,7 @@ export default function Impressum() {
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
         SAP Beratung Andreas Klaus<br />
-        Inhaber: Andreas Klaus<br />
+        Inhaber: Lars Andreas Klaus<br />
         Buttendorfer Str. 49<br />
         90431 Nürnberg<br />
         Deutschland
