@@ -28,9 +28,9 @@ Die Website ist anschließend unter `http://localhost:3000` erreichbar.
 ## Qualitätssicherung
 
 ```bash
-npm run build
+npm test
 npm run lint
-node --test tests/rendered-html.test.mjs
+npm run typecheck
 ```
 
 ## Veröffentlichung
