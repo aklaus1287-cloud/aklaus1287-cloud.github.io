@@ -100,6 +100,7 @@ em { color: var(--aqua); font-family: Georgia, "Times New Roman", serif; font-st
 .eyebrow-light { color: #d7fbfd; }
 .home .section, .home .contact { padding-block: 64px; }
 .home .section h2, .home .contact h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; }
+.home > .home-about { background: #fff; border-bottom: 1px solid var(--line); padding-block: 28px; }
 .home-link-grid {
   display: grid;
   gap: 0 40px;
@@ -333,8 +334,10 @@ footer { align-items: center; background: var(--navy-deep); color: white; displa
   .home .section, .home .contact { padding-block: 42px; }
   .home-link-grid { grid-template-columns: 1fr; margin-top: 20px; }
   .home .project-actions { align-items: start; gap: 13px; }
-  .home-about { gap: 20px; grid-template-columns: minmax(0, 1fr); }
-  .home-about picture { max-width: 128px; }
+  .home > .home-about { padding-block: 24px; }
+  .home-about { gap: 16px; grid-template-columns: minmax(0, 1fr); }
+  .home-about picture { grid-row: 1; max-width: 112px; }
+  .home-about > div { grid-row: 2; }
   .home .contact { gap: 32px; }
   .hero-lead { font-size: 16px; }
   .button { width: 100%; }

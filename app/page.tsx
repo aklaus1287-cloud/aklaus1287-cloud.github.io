@@ -57,7 +57,20 @@ export default function Home() {
       </header>
 
       <main className="home">
-        <section className="hero" id="start">
+        <section className="section home-about" id="start">
+          <div>
+            <h2 id="ueber-mich">Über mich</h2>
+            <p>Ich bin Andreas Klaus, Wirtschaftsinformatiker (B.Sc.) und seit 2010 in SAP-Projekten tätig. Sie stimmen sich direkt mit mir ab, vom ersten Gespräch bis zur Übergabe.</p>
+            <p>Ich übernehme auch einzelne Aufgaben wie Code-Reviews und Fehleranalysen. Die Zusammenarbeit ist remote oder nach Absprache vor Ort möglich.</p>
+          </div>
+          <picture>
+            <source type="image/avif" srcSet="/andreas-klaus-480.avif" />
+            <img src="/andreas-klaus-480.webp" alt="Andreas Klaus, SAP-Berater aus Nürnberg" width="480" height="630" loading="eager" fetchPriority="high" />
+          </picture>
+        </section>
+
+
+        <section className="hero">
           <p className="eyebrow"><span></span>Nürnberg und deutschlandweit remote</p>
           <h1>Technische SAP-Beratung und ABAP-Entwicklung</h1>
           <p className="hero-lead">Ich unterstütze Sie bei ABAP und Fiori, SAP-Schnittstellen und der Umstellung auf S/4HANA – von der Analyse bis zur Umsetzung.</p>
@@ -105,18 +118,6 @@ export default function Home() {
               Projektprofil als PDF <span aria-hidden="true">↓</span>
             </a>
           </div>
-        </section>
-
-        <section className="section home-about" id="ueber-mich">
-          <div>
-            <h2>Über mich</h2>
-            <p>Ich bin Andreas Klaus, Wirtschaftsinformatiker (B.Sc.) und seit 2010 in SAP-Projekten tätig. Sie stimmen sich direkt mit mir ab, vom ersten Gespräch bis zur Übergabe.</p>
-            <p>Ich übernehme auch einzelne Aufgaben wie Code-Reviews und Fehleranalysen. Die Zusammenarbeit ist remote oder nach Absprache vor Ort möglich.</p>
-          </div>
-          <picture>
-            <source type="image/avif" srcSet="/andreas-klaus-480.avif" />
-            <img src="/andreas-klaus-480.webp" alt="Andreas Klaus, SAP-Berater aus Nürnberg" width="480" height="630" loading="lazy" />
-          </picture>
         </section>
 
         <section className="contact" id="kontakt">

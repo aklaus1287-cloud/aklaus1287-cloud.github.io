@@ -20,6 +20,8 @@ test("exports the complete consulting website", async () => {
   assert.match(html, /andreas-klaus-480\.webp/);
   assert.match(html, /andreas-klaus-480\.avif/);
   assert.match(html, /Andreas Klaus, SAP-Berater aus Nürnberg/);
+  assert.ok(html.indexOf(">Über mich</h2>") < html.indexOf(">Technische SAP-Beratung und ABAP-Entwicklung</h1>"), "Das Porträt und Über mich erscheinen vor dem Hero-Bereich");
+  assert.match(html, /loading="eager"[^>]*fetchPriority="high"/);
   assert.match(html, /Anfrage sicher senden/);
   assert.match(html, /<h3>SAP-Personalvermittlung<\/h3>/);
   assert.match(html, /Alle 18 Projekte &amp; Fallstudien/);
